@@ -18,10 +18,10 @@ $defaults = array(
 
 
 // завернутые сигнатуры, чтобы не ругались антивирусы на PC и на хостинге
-$g_DBShe = unserialize(base64_decode("YTo3Njp7aTowO3M6OTQ6IiRpbmZvIC49ICgoJHBlcm1zICYgMHgwMDQwKSA/KCgkcGVybXMgJiAweDA4MDApID8gJ3MnIDogJ3gnICkgOigoJHBlcm1zICYgMHgwODAwKSA/ICdTJyA6ICctJykiO2k6MTtzOjg0OiI8dGV4dGFyZWEgbmFtZT1cInBocGV2XCIgcm93cz1cIjVcIiBjb2xzPVwiMTUwXCI+Ii5AJF9QT1NUWydwaHBldiddLiI8L3RleHRhcmVhPjxicj4iO2k6MjtzOjEwMToiN1RNR0FIWTVLYU05bzM3Vy9HUS9mckZKZXRmcWxSR082RlNSVE1tN0lMU20zNW81ejQrdjBtY2Y0S2FIZ0tTNVkxN2VxcXZEMm1tTjhOenRleXBsTmQ2V093clFWSzQ0NUoveTAiO2k6MztzOjE2OiJjOTlmdHBicnV0ZWNoZWNrIjtpOjQ7czo4OiJjOTlzaGVsbCI7aTo1O3M6ODoicjU3c2hlbGwiO2k6NjtzOjE0OiJ0ZW1wX3I1N190YWJsZSI7aTo3O3M6NzY6IlIwbEdPRGxoSmdBV0FJQUFBQUFBQVAvLy95SDVCQVVVQUFFQUxBQUFBQUFtQUJZQUFBSXZqSStweSswUEY0aTBnVnZ6dVZ4WERub1EiO2k6ODtzOjc6ImNhc3VzMTUiO2k6OTtzOjEzOiJXU0NSSVBULlNIRUxMIjtpOjEwO3M6NDc6IkV4ZWN1dGVkIGNvbW1hbmQ6IDxiPjxmb250IGNvbG9yPSNkY2RjZGM+WyRjbWRdIjtpOjExO3M6MTE6ImN0c2hlbGwucGhwIjtpOjEyO3M6MTExOiJCREFRa0pDUXdMREJnTkRSZ3lJUndoTWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qTC93QUFSQ0FBUUFCQURBU0lBQWhFQkEiO2k6MTM7czozMDoiW0F2NGJmQ1lDUyx4S1drJCtUa1VTLHhuR2RBeFtPIjtpOjE0O3M6MTU6IkRYX0hlYWRlcl9kcmF3biI7aToxNTtzOjEwNjoiOXRaU0IwYnlCeU5UY2djMmhsYkd3Z0ppWWdMMkpwYmk5aVlYTm9JQzFwSWlrN0RRb2dJQ0JsYkhObERRb2dJQ0JtY0hKcGJuUm1LSE4wWkdWeWNpd2lVMjl5Y25raUtUc05DaUFnSUdOcyI7aToxNjtzOjg2OiJjcmxmLid1bmxpbmsoJG5hbWUpOycuJGNybGYuJ3JlbmFtZSgifiIuJG5hbWUsICRuYW1lKTsnLiRjcmxmLid1bmxpbmsoImdycF9yZXBhaXIucGhwIiI7aToxNztzOjEwNToiLzB0VlNHL1N1djBVci9oYVVZQWRuM2pNUXdiYm9jR2ZmQWVDMjlCTjl0bUJpSmRWMWxrK2pZRFU5MkM5NGpkdERpZit4T1lqRzZDTGh4MzFVbzl4OS9lQVdnc0JLNjBrSzJtTHdxenFkIjtpOjE4O3M6MTE1OiJtcHR5KCRfUE9TVFsndXInXSkpICRtb2RlIHw9IDA0MDA7IGlmICghZW1wdHkoJF9QT1NUWyd1dyddKSkgJG1vZGUgfD0gMDIwMDsgaWYgKCFlbXB0eSgkX1BPU1RbJ3V4J10pKSAkbW9kZSB8PSAwMTAwIjtpOjE5O3M6NDQ6IldUK1B7fkVXMEVyUE90blVAI0AmXmxec1AxbGRueUAjQCZuc2srcjAsR1QrIjtpOjIwO3M6Mzc6ImtsYXN2YXl2LmFzcD95ZW5pZG9zeWE9PCU9YWt0aWZrbGFzJT4iO2k6MjE7czoxMjI6Im50KShkaXNrX3RvdGFsX3NwYWNlKGdldGN3ZCgpKS8oMTAyNCoxMDI0KSkgLiAiTWIgIiAuICJGcmVlIHNwYWNlICIgLiAoaW50KShkaXNrX2ZyZWVfc3BhY2UoZ2V0Y3dkKCkpLygxMDI0KjEwMjQpKSAuICJNYiA8IjtpOjIyO3M6MzE6InMoKS5nKCkucygpLnMoKS5nKCkucygpLnMoKS5nKCkiO2k6MjM7czo4ODoiQ1Jic2tFSVMreWJLQXdjNi9PQjFqVThZMFlJTVZVaHhoYU9Jc0hBQ0J5RDB3TUFOT0hxWTVZNDhndWlCbkNoa3dQWU5Ua3hkQlJWUlpMSEZrb2pZOTZJSSI7aToyNDtzOjczOiIkcG9ydF9iaW5kX2JkX3BsPSJJeUV2ZFhOeUwySnBiaTl3WlhKc0RRb2tVMGhGVEV3OUlpOWlhVzR2WW1GemFDQXRhU0k3RFFwIjtpOjI1O3M6MTI3OiJDQjJhVFpwSURFd01qUXREUW9qTFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFEwS0kzSmxjWFZwIjtpOjI2O3M6NzoiTlREYWRkeSI7aToyNztzOjc2OiJhIGhyZWY9Ijw/ZWNobyAiJGZpc3Rpay5waHA/ZGl6aW49JGRpemluLy4uLyI/PiIgc3R5bGU9InRleHQtZGVjb3JhdGlvbjogbm9uIjtpOjI4O3M6MTE1OiJUUlVGRVJGSXNNU2s3RFFwaWFXNWtLRk1zYzI5amEyRmtaSEpmYVc0b0pFeEpVMVJGVGw5UVQxSlVMRWxPUVVSRVVsOUJUbGtwS1NCOGZDQmthV1VnSWtOaGJuUWdiM0JsYmlCd2IzSjBYRzRpT3cwS2JHIjtpOjI5O3M6Mzg6IlJvb3RTaGVsbCEnKTtzZWxmLmxvY2F0aW9uLmhyZWY9J2h0dHA6IjtpOjMwO3M6MTEzOiJtOTFkQ3dnSkdWdmRYUXBPdzBLYzJWc1pXTjBLQ1J5YjNWMElEMGdKSEpwYml3Z2RXNWtaV1lzSUNSbGIzVjBJRDBnSkhKcGJpd2dNVEl3S1RzTkNtbG1JQ2doSkhKdmRYUWdJQ1ltSUNBaEpHVnZkWCI7aTozMTtzOjkwOiI8JT1SZXF1ZXN0LlNlcnZlclZhcmlhYmxlcygic2NyaXB0X25hbWUiKSU+P0ZvbGRlclBhdGg9PCU9U2VydmVyLlVSTFBhdGhFbmNvZGUoRm9sZGVyLkRyaXYiO2k6MzI7czo3MzoiUjBsR09EbGhGQUFVQUtJQUFBQUFBUC8vLzkzZDNjREF3SWFHaGdRRUJQLy8vd0FBQUNINUJBRUFBQVlBTEFBQUFBQVVBQlFBQSI7aTozMztzOjE2MDoicHJpbnQoKGlzX3JlYWRhYmxlKCRmKSAmJiBpc193cml0ZWFibGUoJGYpKT8iPHRyPjx0ZD4iLncoMSkuYigiUiIudygxKS5mb250KCdyZWQnLCdSVycsMykpLncoMSk6KCgoaXNfcmVhZGFibGUoJGYpKT8iPHRyPjx0ZD4iLncoMSkuYigiUiIpLncoNCk6IiIpLigoaXNfd3JpdGFibCI7aTozNDtzOjE2MToiKCciJywnJnF1b3Q7JywkZm4pKS4nIjtkb2N1bWVudC5saXN0LnN1Ym1pdCgpO1wnPicuaHRtbHNwZWNpYWxjaGFycyhzdHJsZW4oJGZuKT5mb3JtYXQ/c3Vic3RyKCRmbiwwLGZvcm1hdC0zKS4nLi4uJzokZm4pLic8L2E+Jy5zdHJfcmVwZWF0KCcgJyxmb3JtYXQtc3RybGVuKCRmbikiO2k6MzU7czoxMToiemVoaXJoYWNrZXIiO2k6MzY7czo1OiJzeXBleCI7aTozNztzOjU2OiJKQCFWckAqJlJIUnd+Skx3Lkd8eGxobkxKfj8xLmJ3T2J4YlB8IVZeQ3g5/fD9eP0iUN3nYnh+UCI7aTozODtzOjg6ImNpaHNoZWxsIjtpOjM5O3M6MTI2OiJYMU5GVTFOSlQwNWJKM1I0ZEdGMWRHaHBiaWRkSUQwZ2RISjFaVHNOQ2lBZ0lDQnBaaUFvSkY5UVQxTlVXeWR5YlNkZEtTQjdEUW9nSUNBZ0lDQnpaWFJqYjI5cmFXVW9KM1I0ZEdGMWRHaGZKeTRrY20xbmNtOTFjQ3dnYlciO2k6NDA7czo2MToiSkhacGMybDBZMjkxYm5RZ1BTQWtTRlJVVUY5RFQwOUxTVVZmVmtGU1Uxc2lkbWx6YVhSeklsMDdJR2xtSyI7aTo0MTtzOjc6IkZ4Yzk5c2giO2k6NDI7czozOToiV1NPc2V0Y29va2llKG1kNSgkX1NFUlZFUlsnSFRUUF9IT1NUJ10pIjtpOjQzO3M6MTA3OiJDUWJvR2w3Zit4Y0F5VXlzeGI1bUtTNmtBV3NuUkxkUytzS2dHb1pXZHN3TEZKWlY4dFZ6WHNxK21lU1BITXhUSTNuU1VCNGZKMnZSM3IzT252WHROQXFONnduL0R0VFRpK0N1MVVPSndOTCI7aTo0NDtzOjE0MToiPC90ZD48dGQgaWQ9ZmE+WyA8YSB0aXRsZT1cIkhvbWU6ICciLmh0bWxzcGVjaWFsY2hhcnMoc3RyX3JlcGxhY2UoIlwiLCAkc2VwLCBnZXRjd2QoKSkpLiInLlwiIGlkPWZhIGhyZWY9XCJqYXZhc2NyaXB0OlZpZXdEaXIoJyIucmF3dXJsZW5jb2RlIjtpOjQ1O3M6MTY6IkNvbnRlbnQtVHlwZTogJF8iO2k6NDY7czo4NjoiPG5vYnI+PGI+JGNkaXIkY2ZpbGU8L2I+ICgiLiRmaWxlWyJzaXplX3N0ciJdLiIpPC9ub2JyPjwvdGQ+PC90cj48Zm9ybSBuYW1lPWN1cnJfZmlsZT4iO2k6NDc7czo0ODoid3NvRXgoJ3RhciBjZnp2ICcgLiBlc2NhcGVzaGVsbGFyZygkX1BPU1RbJ3AyJ10pIjtpOjQ4O3M6MjE6ImV2YWwoYmFzZTY0X2RlY29kZSgkXyI7aTo0OTtzOjE0MjoiNWpiMjBpS1c5eUlITjBjbWx6ZEhJb0pISmxabVZ5WlhJc0ltRndiM0owSWlrZ2IzSWdjM1J5YVhOMGNpZ2tjbVZtWlhKbGNpd2libWxuYldFaUtTQnZjaUJ6ZEhKcGMzUnlLQ1J5WldabGNtVnlMQ0ozWldKaGJIUmhJaWtnYjNJZ2MzUnlhWE4wY2lnayI7aTo1MDtzOjc2OiJMUzBnUkhWdGNETmtJR0o1SUZCcGNuVnNhVzR1VUVoUUlGZGxZbk5vTTJ4c0lIWXhMakFnWXpCa1pXUWdZbmtnY2pCa2NqRWdPa3c9IjtpOjUxO3M6NjU6ImlmIChlcmVnKCdeW1s6Ymxhbms6XV0qY2RbWzpibGFuazpdXSsoW147XSspJCcsICRjb21tYW5kLCAkcmVncykpIjtpOjUyO3M6MTEwOiJ2enY2ZCtpT3Z0a2QzOFRsSHU4bVFhdlhkbkpDYnBRY3BYaE5iYkxtWk9xTW9wRFplTmFsYitWS2xlZGhDanBWQU1RU1FueFZJRUNRQWZMdTVLZ0xtd0I2ZWhRUUdOU0JZanBnOWc1R2RCaWhYbyI7aTo1MztzOjQ2OiJyb3VuZCgwKzk4MzAuNCs5ODMwLjQrOTgzMC40Kzk4MzAuNCs5ODMwLjQpKT09IjtpOjU0O3M6MTI6IlBIUFNIRUxMLlBIUCI7aTo1NTtzOjEyNzoicWhEVFpJcE1jQjF4Qm9rMzMyQmpjY2ZQWHEwUXNaVS9nNGVhcEJ4VDVnaXQxckdkS3R3ZjFydDlPT2ljYy9oVGxwZUZtRWpSUmtXR1dUSlRrQ29sMFg0QXV3SlNmRmh0ZlA1ZE9nbjU2MWlsK3dremtxQ0c5ZGZUOXpxYzI3NCI7aTo1NjtzOjEyMDoiVHNOQ2lBZ0lDQnphVzR1YzJsdVgyWmhiV2xzZVNBOUlFRkdYMGxPUlZRN0RRb2dJQ0FnYzJsdUxuTnBibDl3YjNKMElEMGdhSFJ2Ym5Nb1lYUnZhU2hoY21kMld6SmRLU2s3RFFvZ0lDQWdjMmx1TG5OcGJsOWhaIjtpOjU3O3M6NTI6ImFIUjBjRG92TDJvdFpHVjJMbkoxTDJsdVpHVjRMbkJvY0Q5amNHNDlabkpoYldWelpXeHMiO2k6NTg7czo4NzoiV1RKVGtDb2wwWDRBdXdKU2ZGaHRmUDVkT2duNTYxaWwrd2t6a3FDRzlkZlQ5enFjMjc0dmVJZVNkNDFDeFVJdkhGbit0Vzc3b0Uzb2hxU3YwMUJYelQwIjtpOjU5O3M6NzE6IkhCeWIzUnZLU0I4ZkNCa2FXVW9Ja1Z5Y205eU9pQWtJVnh1SWlrN0RRcGpiMjV1WldOMEtGTlBRMHRGVkN3Z0pIQmhaR1J5IjtpOjYwO3M6MTc6IldlYiBTaGVsbCBieSBib2ZmIjtpOjYxO3M6MTY6IldlYiBTaGVsbCBieSBvUmIiO2k6NjI7czoxMToiZGV2aWx6U2hlbGwiO2k6NjM7czoyMDoiU2hlbGwgYnkgTWF3YXJfSGl0YW0iO2k6NjQ7czo4OiJOM3RzaGVsbCI7aTo2NTtzOjExOiJTdG9ybTdTaGVsbCI7aTo2NjtzOjExOiJMb2N1czdTaGVsbCI7aTo2NztzOjIyOiJwcml2YXRlIFNoZWxsIGJ5IG00cmNvIjtpOjY4O3M6MTM6Inc0Y2sxbmcgc2hlbGwiO2k6Njk7czoyMToiRmFUYUxpc1RpQ3pfRnggRngyOVNoIjtpOjcwO3M6MTI6InI1N3NoZWxsLnBocCI7aTo3MTtzOjI3OiJkZWZhdWx0X2FjdGlvbiA9ICdGaWxlc01hbiciO2k6NzI7czo0MjoiV29ya2VyX0dldFJlcGx5Q29kZSgkb3BEYXRhWydyZWN2QnVmZmVyJ10pIjtpOjczO3M6NDA6IiRmaWxlcGF0aD1AcmVhbHBhdGgoJF9QT1NUWydmaWxlcGF0aCddKTsiO2k6NzQ7czo5OiJhbnRpc2hlbGwiO2k6NzU7czo5OiJyb290c2hlbGwiO30="));
+$g_DBShe = unserialize(base64_decode("YTo3ODp7aTowO3M6OTQ6IiRpbmZvIC49ICgoJHBlcm1zICYgMHgwMDQwKSA/KCgkcGVybXMgJiAweDA4MDApID8gJ3MnIDogJ3gnICkgOigoJHBlcm1zICYgMHgwODAwKSA/ICdTJyA6ICctJykiO2k6MTtzOjg0OiI8dGV4dGFyZWEgbmFtZT1cInBocGV2XCIgcm93cz1cIjVcIiBjb2xzPVwiMTUwXCI+Ii5AJF9QT1NUWydwaHBldiddLiI8L3RleHRhcmVhPjxicj4iO2k6MjtzOjEwMToiN1RNR0FIWTVLYU05bzM3Vy9HUS9mckZKZXRmcWxSR082RlNSVE1tN0lMU20zNW81ejQrdjBtY2Y0S2FIZ0tTNVkxN2VxcXZEMm1tTjhOenRleXBsTmQ2V093clFWSzQ0NUoveTAiO2k6MztzOjE2OiJjOTlmdHBicnV0ZWNoZWNrIjtpOjQ7czo4OiJjOTlzaGVsbCI7aTo1O3M6ODoicjU3c2hlbGwiO2k6NjtzOjE0OiJ0ZW1wX3I1N190YWJsZSI7aTo3O3M6NzY6IlIwbEdPRGxoSmdBV0FJQUFBQUFBQVAvLy95SDVCQVVVQUFFQUxBQUFBQUFtQUJZQUFBSXZqSStweSswUEY0aTBnVnZ6dVZ4WERub1EiO2k6ODtzOjc6ImNhc3VzMTUiO2k6OTtzOjEzOiJXU0NSSVBULlNIRUxMIjtpOjEwO3M6NDc6IkV4ZWN1dGVkIGNvbW1hbmQ6IDxiPjxmb250IGNvbG9yPSNkY2RjZGM+WyRjbWRdIjtpOjExO3M6MTE6ImN0c2hlbGwucGhwIjtpOjEyO3M6MTExOiJCREFRa0pDUXdMREJnTkRSZ3lJUndoTWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qTC93QUFSQ0FBUUFCQURBU0lBQWhFQkEiO2k6MTM7czozMDoiW0F2NGJmQ1lDUyx4S1drJCtUa1VTLHhuR2RBeFtPIjtpOjE0O3M6MTU6IkRYX0hlYWRlcl9kcmF3biI7aToxNTtzOjEwNjoiOXRaU0IwYnlCeU5UY2djMmhsYkd3Z0ppWWdMMkpwYmk5aVlYTm9JQzFwSWlrN0RRb2dJQ0JsYkhObERRb2dJQ0JtY0hKcGJuUm1LSE4wWkdWeWNpd2lVMjl5Y25raUtUc05DaUFnSUdOcyI7aToxNjtzOjg2OiJjcmxmLid1bmxpbmsoJG5hbWUpOycuJGNybGYuJ3JlbmFtZSgifiIuJG5hbWUsICRuYW1lKTsnLiRjcmxmLid1bmxpbmsoImdycF9yZXBhaXIucGhwIiI7aToxNztzOjEwNToiLzB0VlNHL1N1djBVci9oYVVZQWRuM2pNUXdiYm9jR2ZmQWVDMjlCTjl0bUJpSmRWMWxrK2pZRFU5MkM5NGpkdERpZit4T1lqRzZDTGh4MzFVbzl4OS9lQVdnc0JLNjBrSzJtTHdxenFkIjtpOjE4O3M6MTE1OiJtcHR5KCRfUE9TVFsndXInXSkpICRtb2RlIHw9IDA0MDA7IGlmICghZW1wdHkoJF9QT1NUWyd1dyddKSkgJG1vZGUgfD0gMDIwMDsgaWYgKCFlbXB0eSgkX1BPU1RbJ3V4J10pKSAkbW9kZSB8PSAwMTAwIjtpOjE5O3M6NDQ6IldUK1B7fkVXMEVyUE90blVAI0AmXmxec1AxbGRueUAjQCZuc2srcjAsR1QrIjtpOjIwO3M6Mzc6ImtsYXN2YXl2LmFzcD95ZW5pZG9zeWE9PCU9YWt0aWZrbGFzJT4iO2k6MjE7czoxMjI6Im50KShkaXNrX3RvdGFsX3NwYWNlKGdldGN3ZCgpKS8oMTAyNCoxMDI0KSkgLiAiTWIgIiAuICJGcmVlIHNwYWNlICIgLiAoaW50KShkaXNrX2ZyZWVfc3BhY2UoZ2V0Y3dkKCkpLygxMDI0KjEwMjQpKSAuICJNYiA8IjtpOjIyO3M6MzE6InMoKS5nKCkucygpLnMoKS5nKCkucygpLnMoKS5nKCkiO2k6MjM7czo4ODoiQ1Jic2tFSVMreWJLQXdjNi9PQjFqVThZMFlJTVZVaHhoYU9Jc0hBQ0J5RDB3TUFOT0hxWTVZNDhndWlCbkNoa3dQWU5Ua3hkQlJWUlpMSEZrb2pZOTZJSSI7aToyNDtzOjczOiIkcG9ydF9iaW5kX2JkX3BsPSJJeUV2ZFhOeUwySnBiaTl3WlhKc0RRb2tVMGhGVEV3OUlpOWlhVzR2WW1GemFDQXRhU0k3RFFwIjtpOjI1O3M6MTI3OiJDQjJhVFpwSURFd01qUXREUW9qTFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFEwS0kzSmxjWFZwIjtpOjI2O3M6NzoiTlREYWRkeSI7aToyNztzOjc2OiJhIGhyZWY9Ijw/ZWNobyAiJGZpc3Rpay5waHA/ZGl6aW49JGRpemluLy4uLyI/PiIgc3R5bGU9InRleHQtZGVjb3JhdGlvbjogbm9uIjtpOjI4O3M6MTE1OiJUUlVGRVJGSXNNU2s3RFFwaWFXNWtLRk1zYzI5amEyRmtaSEpmYVc0b0pFeEpVMVJGVGw5UVQxSlVMRWxPUVVSRVVsOUJUbGtwS1NCOGZDQmthV1VnSWtOaGJuUWdiM0JsYmlCd2IzSjBYRzRpT3cwS2JHIjtpOjI5O3M6Mzg6IlJvb3RTaGVsbCEnKTtzZWxmLmxvY2F0aW9uLmhyZWY9J2h0dHA6IjtpOjMwO3M6MTEzOiJtOTFkQ3dnSkdWdmRYUXBPdzBLYzJWc1pXTjBLQ1J5YjNWMElEMGdKSEpwYml3Z2RXNWtaV1lzSUNSbGIzVjBJRDBnSkhKcGJpd2dNVEl3S1RzTkNtbG1JQ2doSkhKdmRYUWdJQ1ltSUNBaEpHVnZkWCI7aTozMTtzOjkwOiI8JT1SZXF1ZXN0LlNlcnZlclZhcmlhYmxlcygic2NyaXB0X25hbWUiKSU+P0ZvbGRlclBhdGg9PCU9U2VydmVyLlVSTFBhdGhFbmNvZGUoRm9sZGVyLkRyaXYiO2k6MzI7czo3MzoiUjBsR09EbGhGQUFVQUtJQUFBQUFBUC8vLzkzZDNjREF3SWFHaGdRRUJQLy8vd0FBQUNINUJBRUFBQVlBTEFBQUFBQVVBQlFBQSI7aTozMztzOjE2MDoicHJpbnQoKGlzX3JlYWRhYmxlKCRmKSAmJiBpc193cml0ZWFibGUoJGYpKT8iPHRyPjx0ZD4iLncoMSkuYigiUiIudygxKS5mb250KCdyZWQnLCdSVycsMykpLncoMSk6KCgoaXNfcmVhZGFibGUoJGYpKT8iPHRyPjx0ZD4iLncoMSkuYigiUiIpLncoNCk6IiIpLigoaXNfd3JpdGFibCI7aTozNDtzOjE2MToiKCciJywnJnF1b3Q7JywkZm4pKS4nIjtkb2N1bWVudC5saXN0LnN1Ym1pdCgpO1wnPicuaHRtbHNwZWNpYWxjaGFycyhzdHJsZW4oJGZuKT5mb3JtYXQ/c3Vic3RyKCRmbiwwLGZvcm1hdC0zKS4nLi4uJzokZm4pLic8L2E+Jy5zdHJfcmVwZWF0KCcgJyxmb3JtYXQtc3RybGVuKCRmbikiO2k6MzU7czoxMToiemVoaXJoYWNrZXIiO2k6MzY7czo1OiJzeXBleCI7aTozNztzOjM5OiJKQCFWckAqJlJIUnd+Skx3Lkd8eGxobkxKfj8xLmJ3T2J4YlB8IVYiO2k6Mzg7czo4OiJjaWhzaGVsbCI7aTozOTtzOjEyNjoiWDFORlUxTkpUMDViSjNSNGRHRjFkR2hwYmlkZElEMGdkSEoxWlRzTkNpQWdJQ0JwWmlBb0pGOVFUMU5VV3lkeWJTZGRLU0I3RFFvZ0lDQWdJQ0J6WlhSamIyOXJhV1VvSjNSNGRHRjFkR2hmSnk0a2NtMW5jbTkxY0N3Z2JXIjtpOjQwO3M6NjE6IkpIWnBjMmwwWTI5MWJuUWdQU0FrU0ZSVVVGOURUMDlMU1VWZlZrRlNVMXNpZG1semFYUnpJbDA3SUdsbUsiO2k6NDE7czo3OiJGeGM5OXNoIjtpOjQyO3M6Mzk6IldTT3NldGNvb2tpZShtZDUoJF9TRVJWRVJbJ0hUVFBfSE9TVCddKSI7aTo0MztzOjEwNzoiQ1Fib0dsN2YreGNBeVV5c3hiNW1LUzZrQVdzblJMZFMrc0tnR29aV2Rzd0xGSlpWOHRWelhzcSttZVNQSE14VEkzblNVQjRmSjJ2UjNyM09udlh0TkFxTjZ3bi9EdFRUaStDdTFVT0p3TkwiO2k6NDQ7czoxNDE6IjwvdGQ+PHRkIGlkPWZhPlsgPGEgdGl0bGU9XCJIb21lOiAnIi5odG1sc3BlY2lhbGNoYXJzKHN0cl9yZXBsYWNlKCJcIiwgJHNlcCwgZ2V0Y3dkKCkpKS4iJy5cIiBpZD1mYSBocmVmPVwiamF2YXNjcmlwdDpWaWV3RGlyKCciLnJhd3VybGVuY29kZSI7aTo0NTtzOjE2OiJDb250ZW50LVR5cGU6ICRfIjtpOjQ2O3M6ODY6Ijxub2JyPjxiPiRjZGlyJGNmaWxlPC9iPiAoIi4kZmlsZVsic2l6ZV9zdHIiXS4iKTwvbm9icj48L3RkPjwvdHI+PGZvcm0gbmFtZT1jdXJyX2ZpbGU+IjtpOjQ3O3M6NDg6Indzb0V4KCd0YXIgY2Z6diAnIC4gZXNjYXBlc2hlbGxhcmcoJF9QT1NUWydwMiddKSI7aTo0ODtzOjIxOiJldmFsKGJhc2U2NF9kZWNvZGUoJF8iO2k6NDk7czoxNDI6IjVqYjIwaUtXOXlJSE4wY21semRISW9KSEpsWm1WeVpYSXNJbUZ3YjNKMElpa2diM0lnYzNSeWFYTjBjaWdrY21WbVpYSmxjaXdpYm1sbmJXRWlLU0J2Y2lCemRISnBjM1J5S0NSeVpXWmxjbVZ5TENKM1pXSmhiSFJoSWlrZ2IzSWdjM1J5YVhOMGNpZ2siO2k6NTA7czo3NjoiTFMwZ1JIVnRjRE5rSUdKNUlGQnBjblZzYVc0dVVFaFFJRmRsWW5Ob00yeHNJSFl4TGpBZ1l6QmtaV1FnWW5rZ2NqQmtjakVnT2t3PSI7aTo1MTtzOjY1OiJpZiAoZXJlZygnXltbOmJsYW5rOl1dKmNkW1s6Ymxhbms6XV0rKFteO10rKSQnLCAkY29tbWFuZCwgJHJlZ3MpKSI7aTo1MjtzOjExMDoidnp2NmQraU92dGtkMzhUbEh1OG1RYXZYZG5KQ2JwUWNwWGhOYmJMbVpPcU1vcERaZU5hbGIrVktsZWRoQ2pwVkFNUVNRbnhWSUVDUUFmTHU1S2dMbXdCNmVoUVFHTlNCWWpwZzlnNUdkQmloWG8iO2k6NTM7czo0Njoicm91bmQoMCs5ODMwLjQrOTgzMC40Kzk4MzAuNCs5ODMwLjQrOTgzMC40KSk9PSI7aTo1NDtzOjEyOiJQSFBTSEVMTC5QSFAiO2k6NTU7czoxMjc6InFoRFRaSXBNY0IxeEJvazMzMkJqY2NmUFhxMFFzWlUvZzRlYXBCeFQ1Z2l0MXJHZEt0d2YxcnQ5T09pY2MvaFRscGVGbUVqUlJrV0dXVEpUa0NvbDBYNEF1d0pTZkZodGZQNWRPZ241NjFpbCt3a3prcUNHOWRmVDl6cWMyNzQiO2k6NTY7czoxMjA6IlRzTkNpQWdJQ0J6YVc0dWMybHVYMlpoYldsc2VTQTlJRUZHWDBsT1JWUTdEUW9nSUNBZ2MybHVMbk5wYmw5d2IzSjBJRDBnYUhSdmJuTW9ZWFJ2YVNoaGNtZDJXekpkS1NrN0RRb2dJQ0FnYzJsdUxuTnBibDloWiI7aTo1NztzOjUyOiJhSFIwY0Rvdkwyb3RaR1YyTG5KMUwybHVaR1Y0TG5Cb2NEOWpjRzQ5Wm5KaGJXVnpaV3hzIjtpOjU4O3M6ODc6IldUSlRrQ29sMFg0QXV3SlNmRmh0ZlA1ZE9nbjU2MWlsK3dremtxQ0c5ZGZUOXpxYzI3NHZlSWVTZDQxQ3hVSXZIRm4rdFc3N29FM29ocVN2MDFCWHpUMCI7aTo1OTtzOjcxOiJIQnliM1J2S1NCOGZDQmthV1VvSWtWeWNtOXlPaUFrSVZ4dUlpazdEUXBqYjI1dVpXTjBLRk5QUTB0RlZDd2dKSEJoWkdSeSI7aTo2MDtzOjE3OiJXZWIgU2hlbGwgYnkgYm9mZiI7aTo2MTtzOjE2OiJXZWIgU2hlbGwgYnkgb1JiIjtpOjYyO3M6MTE6ImRldmlselNoZWxsIjtpOjYzO3M6MjA6IlNoZWxsIGJ5IE1hd2FyX0hpdGFtIjtpOjY0O3M6ODoiTjN0c2hlbGwiO2k6NjU7czoxMToiU3Rvcm03U2hlbGwiO2k6NjY7czoxMToiTG9jdXM3U2hlbGwiO2k6Njc7czoyMjoicHJpdmF0ZSBTaGVsbCBieSBtNHJjbyI7aTo2ODtzOjEzOiJ3NGNrMW5nIHNoZWxsIjtpOjY5O3M6MjE6IkZhVGFMaXNUaUN6X0Z4IEZ4MjlTaCI7aTo3MDtzOjEyOiJyNTdzaGVsbC5waHAiO2k6NzE7czoyNzoiZGVmYXVsdF9hY3Rpb24gPSAnRmlsZXNNYW4nIjtpOjcyO3M6NDI6Ildvcmtlcl9HZXRSZXBseUNvZGUoJG9wRGF0YVsncmVjdkJ1ZmZlciddKSI7aTo3MztzOjQwOiIkZmlsZXBhdGg9QHJlYWxwYXRoKCRfUE9TVFsnZmlsZXBhdGgnXSk7IjtpOjc0O3M6OToiYW50aXNoZWxsIjtpOjc1O3M6OToicm9vdHNoZWxsIjtpOjc2O3M6MTE6Im15c2hlbGxleGVjIjtpOjc3O3M6ODg6IiRyZWRpcmVjdFVSTD0naHR0cDovLycuJHJTaXRlLiRfU0VSVkVSWydSRVFVRVNUX1VSSSddO2lmKGlzc2V0KCRfU0VSVkVSWydIVFRQX1JFRkVSRVInXSkiO30="));
 $g_SusDB = unserialize(base64_decode("YToxNDp7aTowO3M6MjA6ImluaV9nZXQoJ3NhZmVfbW9kZScpIjtpOjE7czoyMDoiaW5pX2dldCgic2FmZV9tb2RlIikiO2k6MjtzOjI4OiJldmFsKGd6aW5mbGF0ZShiYXNlNjRfZGVjb2RlIjtpOjM7czoxOToiZXZhbChiYXNlNjRfZGVjb2RlKCI7aTo0O3M6MjA6InNycGF0aDovLy4uLy4uLy4uLy4uIjtpOjU7czo3OiI8aWZyYW1lIjtpOjY7czo5OiJwaHBpbmZvKCkiO2k6NztzOjMxOiJldmFsKGd6dW5jb21wcmVzcyhiYXNlNjRfZGVjb2RlIjtpOjg7czoxODoiZXZhbChiYXNlNjRfZGVjb2RlIjtpOjk7czoxNDoiU0hPVyBEQVRBQkFTRVMiO2k6MTA7czoxNDoicG9zaXhfZ2V0cHd1aWQiO2k6MTE7czoxNzoiJGRlZmF1bHRfdXNlX2FqYXgiO2k6MTI7czoxMzoiZXZhbCh1bmVzY2FwZSI7aToxMztzOjIzOiJkb2N1bWVudC53cml0ZSh1bmVzY2FwZSI7fQ=="));
 $g_AdwareSig = unserialize(base64_decode("YToxMTp7aTowO3M6MTk6Il9fbGlua2ZlZWRfcm9ib3RzX18iO2k6MTtzOjEzOiJMSU5LRkVFRF9VU0VSIjtpOjI7czoxODoiX19zYXBlX2RlbGltaXRlcl9fIjtpOjM7czoyNjoiZGlzcGVuc2VyLmFydGljbGVzLnNhcGUucnUiO2k6NDtzOjExOiJMRU5LX2NsaWVudCI7aTo1O3M6MTE6IlNBUEVfY2xpZW50IjtpOjY7czoxNToiZGIudHJ1c3RsaW5rLnJ1IjtpOjc7czoxNjoidGxfbGlua3NfZGJfZmlsZSI7aTo4O3M6MTU6IlRydXN0bGlua0NsaWVudCI7aTo5O3M6MTA6Ii0+U0xDbGllbnQiO2k6MTA7czo4MDoiaXNzZXQoJF9TRVJWRVJbJ0hUVFBfVVNFUl9BR0VOVCddKSAmJiAoJF9TRVJWRVJbJ0hUVFBfVVNFUl9BR0VOVCddID09ICdMTVBfUm9ib3QiO30="));
-$g_JSVirSig = unserialize(base64_decode("YTo1OntpOjA7czo0MjoiaWYoMSl7Zj0nZicrJ3InKydvJysnbScrJ0NoJysnYXJDJysnb2RlJzt9IjtpOjE7czoxOToiLnByb3RvdHlwZS5hfWNhdGNoKCI7aToyO3M6Mjg6ImlmKFJlZi5pbmRleE9mKCcuZ29vZ2xlLicpIT0iO2k6MztzOjI2OiJldmFsKGZ1bmN0aW9uKHAsYSxjLGssZSxyKSI7aTo0O3M6NzM6ImluZGV4T2Z8aWZ8cmN8bGVuZ3RofG1zbnx5YWhvb3xyZWZlcnJlcnxhbHRhdmlzdGF8b2dvfGJpfGhwfHZhcnxhb2x8cXVlcnkiO30="));
+$g_JSVirSig = unserialize(base64_decode("YTo2OntpOjA7czo0MjoiaWYoMSl7Zj0nZicrJ3InKydvJysnbScrJ0NoJysnYXJDJysnb2RlJzt9IjtpOjE7czoxOToiLnByb3RvdHlwZS5hfWNhdGNoKCI7aToyO3M6Mjg6ImlmKFJlZi5pbmRleE9mKCcuZ29vZ2xlLicpIT0iO2k6MztzOjI2OiJldmFsKGZ1bmN0aW9uKHAsYSxjLGssZSxyKSI7aTo0O3M6NzM6ImluZGV4T2Z8aWZ8cmN8bGVuZ3RofG1zbnx5YWhvb3xyZWZlcnJlcnxhbHRhdmlzdGF8b2dvfGJpfGhwfHZhcnxhb2x8cXVlcnkiO2k6NTtzOjQ2OiJBcnJheS5wcm90b3R5cGUuc2xpY2UuY2FsbChhcmd1bWVudHMpLmpvaW4oIiIpIjt9"));
 
 ////////////////////////////////////////////////////////////////////////////
 $l_Res = '';
@@ -449,7 +449,7 @@ ob_start();
 ////////////////////////////////////////////////////////////////////////////
 $l_Result = '';
 
-$l_Result .= '<h3>AI-Болит v.20120422 &mdash; удаленькая искалка вредоносного ПО на хостинге.</h3><h5>Григорий Земсков, 2012, <a target=_blank href="http://revisium.com/ai/">Страница проекта на revisium.com.</a></h5>';
+$l_Result .= '<h3>AI-Болит v.20120430 &mdash; удаленькая искалка вредоносного ПО на хостинге.</h3><h5>Григорий Земсков, 2012, <a target=_blank href="http://revisium.com/ai/">Страница проекта на revisium.com.</a></h5>';
 
 
 $l_CreationTime = filemtime(__FILE__);
@@ -622,7 +622,6 @@ function QCR_ScanDirectories($l_RootDir)
 			{
 				if ($l_NeedToScan)
 				{
-					$g_Counter++;
 					$g_FoundTotalFiles++;
 					if (in_array($l_Ext, array(
 						'php', 'php3',
@@ -631,10 +630,10 @@ function QCR_ScanDirectories($l_RootDir)
 					)
 					{
 						$l_DoorwayFilesCounter++;
-
+						
 						if ($l_DoorwayFilesCounter > MAX_ALLOWED_PHP_HTML_IN_DIR)
 						{
-							$l_Doorway[] = $l_SourceDirIndex;
+							$g_Doorway[] = $l_SourceDirIndex;
 							$l_DoorwayFilesCounter = -655360;
 						}
 					}
@@ -646,6 +645,8 @@ function QCR_ScanDirectories($l_RootDir)
 					$g_Structure['s'][$g_Counter] = $l_Stat['size'];
 					$g_Structure['c'][$g_Counter] = $l_Stat['ctime'];
 					$g_Structure['m'][$g_Counter] = $l_Stat['mtime'];
+
+					$g_Counter++;
 				}
 			}
 		}
@@ -653,7 +654,7 @@ function QCR_ScanDirectories($l_RootDir)
 		closedir($l_DIRH);
 	}
 
-	return $l_Structure;
+	return $g_Structure;
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -674,12 +675,18 @@ function getFragment($par_Content, $par_Pos) {
 ///////////////////////////////////////////////////////////////////////////
 function QCR_SearchPHP($src)
 {
-  if (strpos($src, "<?") !== false || strpos($src, "<%") !== false) {
-    return true;
+  $l_Pos = strpos($src, "<?");
+  if ($l_Pos !== false) {
+	return $l_Pos;
   }
 
-  if (preg_match("/(<script[^>]*language\s*=\s*)('|\"|)php('|\"|)([^>]*>)/i", $src)) {
-    return true;
+  $l_Pos = strpos($src, "<%");
+  if ($l_Pos !== false) {
+	return $l_Pos;
+  }
+
+  if (preg_match("/(<script[^>]*language\s*=\s*)('|\"|)php('|\"|)([^>]*>)/i", $src, $l_Found, PREG_OFFSET_CAPTURE)) {
+    return $l_Found[0][1];
   }
 
   return false;
@@ -688,15 +695,16 @@ function QCR_SearchPHP($src)
 ///////////////////////////////////////////////////////////////////////////
 function QCR_GoScan($par_Offset)
 {
-	global $g_Iframer, $g_SuspDir, $g_Redirect, $g_Doorway, $g_EmptyLink, $g_Structure, $g_Counter,
+	global $g_Iframer, $g_SuspDir, $g_Redirect, $g_Doorway, $g_EmptyLink, $g_Structure, $g_Counter, 
 		   $g_WritableDirectories, $g_CriticalPHP, $g_TotalFolder, $g_TotalFiles, $g_WarningPHP, $g_AdwareList,
-		   $g_CriticalPHP, $g_CriticalJS, $g_PHPCodeInside, $g_WarningPHPFragment, $g_BigFiles;
+		   $g_CriticalPHP, $g_CriticalJS, $g_CriticalJSFragment, $g_PHPCodeInside, $g_PHPCodeInsideFragment, 
+		   $g_WarningPHPFragment, $g_BigFiles, $g_RedirectPHPFragment;
 
 	static $_files_and_ignored = 0;
 
-	//print "<pre>";
-	//var_dump($g_Structure);
-	//print "</pre>";
+//	print "<pre>";
+//	var_dump($g_Structure['n']);
+//	print "</pre>";
 
 	for ($i = $par_Offset; $i < $g_Counter; $i++)
 	{
@@ -714,10 +722,11 @@ function QCR_GoScan($par_Offset)
 		}
 		else
 		{
+
 			// FILE
 			if (MAX_SIZE_TO_SCAN > 0 AND $g_Structure['s'][$i] > MAX_SIZE_TO_SCAN)
 			{
-				$g_BigFiles[] = $i;
+			$g_BigFiles[] = $i;
 			}
 			else
 			{
@@ -746,9 +755,11 @@ function QCR_GoScan($par_Offset)
 				}
 
 				// critical JS
-				if (CriticalJS($l_Filename, $i, $l_Content))
+				$l_Pos = CriticalJS($l_Filename, $i, $l_Content);
+				if ($l_Pos !== false)
 				{
 					$g_CriticalJS[] = $i;
+					$g_CriticalJSFragment[] = getFragment($l_Content, $l_Pos);
 				}
 
 				if
@@ -772,9 +783,11 @@ function QCR_GoScan($par_Offset)
 				// check for PHP code inside any type of file
 				if (stripos($l_Filename, '.php') === false)
 				{
-					if (QCR_SearchPHP($l_Content))
+					$l_Pos = QCR_SearchPHP($l_Content);
+					if ($l_Pos !== false)
 					{
 						$g_PHPCodeInside[] = $i;
+						$g_PHPCodeInsideFragment[] = getFragment($l_Content, $l_Pos);
 					}
 				}
 
@@ -787,17 +800,24 @@ function QCR_GoScan($par_Offset)
 				// htaccess
 				if (stripos($l_Filename, '.htaccess'))
 				{
-					if (stripos($l_Content, 'index.php?name=$1') ||
-						stripos($l_Content, 'index.php?m=1')
+				if (stripos($l_Content, 'index.php?name=$1') !== false ||
+						stripos($l_Content, 'index.php?m=1') !== false
 					)
 					{
 						$g_SuspDir[] = $i;
 					}
 
+					$l_Pos = stripos($l_Content, '%{HTTP_USER_AGENT}');
+					if ($l_Pos !== false)
+					{
+						$g_Redirect[] = $i;
+                        $g_RedirectPHPFragment[] = getFragment($l_Content, $l_Pos);
+					}
+
 					$l_HTAContent = preg_replace('|^\s*#.+$|m', '', $l_Content);
 
 					if (
-						preg_match_all("|RewriteRule\s+.+?\s+http://(.+?)/.+\s+[.*R=\d+.*]|smi", $l_HTAContent, $l_Found, PREG_SET_ORDER)
+						preg_match_all("|RewriteRule\s+.+?\s+http://(.+?)/.+\s+\[.*R=\d+.*\]|smi", $l_HTAContent, $l_Found, PREG_SET_ORDER)
 					)
 					{
 						$l_Host = str_replace('www.', '', $_SERVER['HTTP_HOST']);
@@ -811,8 +831,14 @@ function QCR_GoScan($par_Offset)
 							}
 						}
 					}
+
+
+					if (preg_match("|RewriteRule\s+\^\(\.\*\)\$\s+-\s+\[\s*F\s*,\s*L\s*\]|smi")) {
+						$g_Redirect[] = $i;
+					}
 				}
 			}
+			
 			printProgress(++$_files_and_ignored);
 		} // end of if (file)
 
@@ -896,8 +922,9 @@ function CriticalJS($l_FN, $l_Index, $l_Content)
 
   foreach ($g_JSVirSig as $l_Item)
   {
-    if (stripos($l_Content, $l_Item)) {
-       $l_Res = true;
+    $l_Pos = stripos($l_Content, $l_Item);
+    if ($l_Pos !== false) {
+		return $l_Pos;
        break;
     }
   }
@@ -907,6 +934,10 @@ function CriticalJS($l_FN, $l_Index, $l_Content)
 
 
 ///////////////////////////////////////////////////////////////////////////
+if (!isCli()) {
+   header('Content-type: text/html; charset=utf-8');
+}
+
 
 if ($_GET['p'] != PASS && isset($_SERVER['HTTP_HOST'])) {
   print "Запустите скрипт с паролем, который установлен в переменной PASS (в начале файла). <br/>Например, так http://ваш_сайт_и_путь_до_скрипта/ai-bolit.php?p=<b>qwe555</b>";
@@ -920,6 +951,7 @@ if (!is_readable(ROOT_PATH)) {
 
 stdOut("Start scanning '" . ROOT_PATH . "'.");
 QCR_ScanDirectories(ROOT_PATH);
+
 stdOut("Founded $g_FoundTotalFiles files in $g_FoundTotalDirs directories.");
 QCR_GoScan(0);
 
@@ -940,20 +972,20 @@ $l_ShowOffer = false;
 
 if (count($g_CriticalPHP) > 0) {
 
-  $l_Result .= "<div class=\"vir\">Найдены сигнатуры шелл-скрипта. Подозрение на вредоносный скрипт:";
-  $l_Result .= printList($g_CriticalPHP);
+  $l_Result .= "<div class=\"vir\"><b>Найдены сигнатуры шелл-скрипта. Подозрение на вредоносный скрипт:</b>";
+  $l_Result .= printList($g_CriticalPHP );
   $l_Result .= "</div>";
 
   $l_ShowOffer = true;
 } else {
 
-  $l_Result .= '<div class="ok">Шелл-скрипты не найдены.</div>';
+  $l_Result .= '<div class="ok"><b>Шелл-скрипты не найдены.</b></div>';
 
 }
 
 if (count($g_CriticalJS) > 0) {
-  $l_Result .= "<div class=\"vir\">Найдены сигнатуры Javscript вирусов:";
-  $l_Result .= printList($g_CriticalJS);
+  $l_Result .= "<div class=\"vir\"><b>Найдены сигнатуры javascript вирусов:</b>";
+  $l_Result .= printList($g_CriticalJS, $g_CriticalJSFragment);
   $l_Result .= "</div>";
 
   $l_ShowOffer = true;
@@ -962,7 +994,7 @@ if (count($g_CriticalJS) > 0) {
 if (count($g_Base64) > 0) {
   $l_ShowOffer = true;
 
-  $l_Result .= "<div class=\"vir\">Найдены длинные зашифрованные последовательности в PHP. Подозрение на вредоносный скрипт:";
+  $l_Result .= "<div class=\"vir\"><b>Найдены длинные зашифрованные последовательности в PHP. Подозрение на вредоносный скрипт:</b>";
   $l_Result .= printList($g_Base64);
   $l_Result .= "</div>";
 
@@ -971,7 +1003,7 @@ if (count($g_Base64) > 0) {
 if (count($g_Iframer) > 0) {
   $l_ShowOffer = true;
 
-  $l_Result .= "<div class=\"vir\">Подозрение на вредоносный скрипт:";
+  $l_Result .= "<div class=\"vir\"><b>Подозрение на вредоносный скрипт:</b>";
   $l_Result .= printList($g_Iframer);
   $l_Result .= "</div>";
 
@@ -979,13 +1011,13 @@ if (count($g_Iframer) > 0) {
 
 if (count($g_SuspDir) > 0) {
 
-  $l_Result .= "<div class=\"vir\">Скорее всего этот файл лежит в каталоге с дорвеем:";
+  $l_Result .= "<div class=\"vir\"><b>Скорее всего этот файл лежит в каталоге с дорвеем:</b>";
   $l_Result .= printList($g_SuspDir);
   $l_Result .= "</div>";
 
 } else {
 
-  $l_Result .= '<div class="ok">Не найдено директорий c дорвеями</div>';
+  $l_Result .= '<div class="ok"><b>Не найдено директорий c дорвеями</b></div>';
 
 }
 
@@ -994,8 +1026,8 @@ $l_Result .= "<div class=\"sec\">Предупреждения</div>";
 if (count($g_Redirect) > 0) {
 
   $l_ShowOffer = true;
-  $l_Result .= "<div class=\"warn\">Редирект на внешний сервер. Возможно, дорвей или вредоносный скрипт:";
-  $l_Result .= printList($g_Redirect);
+  $l_Result .= "<div class=\"warn\"><b>Редирект на внешний сервер. Возможно, дорвей или вредоносный скрипт:</b>";
+  $l_Result .= printList($g_Redirect, $g_RedirectPHPFragment);
   $l_Result .= "</div>";
 
 }
@@ -1003,8 +1035,8 @@ if (count($g_Redirect) > 0) {
 if (count($g_PHPCodeInside) > 0) {
 
   $l_ShowOffer = true;
-  $l_Result .= "<div class=\"warn\">В не .php файле содержится стартовая сигнатура PHP кода. Возможно, там вредоносный код:";
-  $l_Result .= printList($g_PHPCodeInside);
+  $l_Result .= "<div class=\"warn\"><b>В не .php файле содержится стартовая сигнатура PHP кода. Возможно, там вредоносный код:</b>";
+  $l_Result .= printList($g_PHPCodeInside, $g_PHPCodeInsideFragment);
   $l_Result .= "</div>";
 
 }
@@ -1012,7 +1044,7 @@ if (count($g_PHPCodeInside) > 0) {
 if (count($g_AdwareList) > 0) {
   $l_ShowOffer = true;
 
-  $l_Result .= "<div class=\"warn\">В этих файлах размещен код по продаже ссылок. Убедитесь, что размещали его вы:";
+  $l_Result .= "<div class=\"warn\"><b>В этих файлах размещен код по продаже ссылок. Убедитесь, что размещали его вы:</b>";
   $l_Result .= printList($g_AdwareList);
   $l_Result .= "</div>";
 
@@ -1021,7 +1053,7 @@ if (count($g_AdwareList) > 0) {
 if (count($g_EmptyLink) > 0 && SCAN_ALL_FILES) {
   $l_ShowOffer = true;
 
-  $l_Result .= "<div class=\"warn\">В этих файлах размещены невидимые ссылки. Подозрение на ссылочный спам:<ul><li>";
+  $l_Result .= "<div class=\"warn\"><b>В этих файлах размещены невидимые ссылки. Подозрение на ссылочный спам:</b><ul><li>";
   $l_Result .= printList($g_EmptyLink);
   $l_Result .= "</div>";
 
@@ -1030,7 +1062,7 @@ if (count($g_EmptyLink) > 0 && SCAN_ALL_FILES) {
 if (count($g_Doorway) > 0) {
   $l_ShowOffer = true;
 
-  $l_Result .= "<div class=\"warn\">Найдены директории, в которых подозрительно много файлов .php или .html. Подозрение на дорвей:";
+  $l_Result .= "<div class=\"warn\"><b>Найдены директории, в которых подозрительно много файлов .php или .html. Подозрение на дорвей:</b>";
   $l_Result .= printList($g_Doorway);
   $l_Result .= "</div>";
 
@@ -1039,7 +1071,7 @@ if (count($g_Doorway) > 0) {
 if (count($g_WarningPHP) > 0) {
   $l_ShowOffer = true;
 
-  $l_Result .= "<div class=\"warn\">Скрипт использует код, которые часто используются во вредоносных скриптах:";
+  $l_Result .= "<div class=\"warn\"><b>Скрипт использует код, которые часто используются во вредоносных скриптах:</b>";
 
 
   $l_Result .= printList($g_WarningPHP, $g_WarningPHPFragment);
@@ -1047,19 +1079,19 @@ if (count($g_WarningPHP) > 0) {
 
 } else {
 
-  $l_Result .= '<div class="ok">Подозрительные скрипты не найдены</div>';
+  $l_Result .= '<div class="ok"><b>Подозрительные скрипты не найдены</b></div>';
 
 }
 
 if (count($g_WritableDirectories) > 0) {
 
-  $l_Result .= "<div class=\"warn2\">Потенциально небезопасно! Директории, доступные скрипту на запись:";
+  $l_Result .= "<div class=\"warn2\"><b>Потенциально небезопасно! Директории, доступные скрипту на запись:</b>";
   $l_Result .= printList($g_WritableDirectories);
   $l_Result .= "</div>";
 
 } else {
 
-  $l_Result .= '<div class="ok">Не найдено директорий, доступных на запись скриптом</div>';
+  $l_Result .= '<div class="ok"><b>Не найдено директорий, доступных на запись скриптом</b></div>';
 
 }
 
@@ -1068,14 +1100,14 @@ $max_size_to_scan = $max_size_to_scan > 0 ? $max_size_to_scan : getBytes('1m');
 
 if (count($$g_BigFiles) > 0) {
 
-  $l_Result .= "<div class=\"warn2\">Большие файлы (больше чем " . bytes2Human($max_size_to_scan) . "! Пропущено:";
+  $l_Result .= "<div class=\"warn2\"><b>Большие файлы (больше чем " . bytes2Human($max_size_to_scan) . "! Пропущено:</b>";
   $l_Result .= printList($g_BigFiles);
   $l_Result .= "</div>";
 
 } else {
-
-  $l_Result .= '<div class="ok">Не найдено файлов больше чем ' . bytes2Human($max_size_to_scan) . '</div>';
-
+  if (SCAN_ALL_FILES) {
+	$l_Result .= '<div class="ok"><b>Не найдено файлов больше чем ' . bytes2Human($max_size_to_scan) . '</b></div>';
+  }
 }
 
 if (!SCAN_ALL_FILES) {
