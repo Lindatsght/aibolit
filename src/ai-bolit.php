@@ -595,7 +595,7 @@ function QCR_ScanDirectories($l_RootDir)
 			$l_IsDir = is_dir($l_FileName);
 
 			$l_NeedToScan = SCAN_ALL_FILES || (in_array($l_Ext, array(
-				'js', 'php', 'php3',
+				'js', 'php', 'php3', 'phtml', 'shtml',
 				'php4', 'php5', 'tpl', 'inc', 'htaccess', 'html', 'htm'
 			)));
 
@@ -1048,10 +1048,10 @@ if (count($g_AdwareList) > 0) {
 
 }
 
-if (count($g_EmptyLink) > 0 && SCAN_ALL_FILES) {
+if (count($g_EmptyLink) > 0) {
   $l_ShowOffer = true;
 
-  $l_Result .= "<div class=\"warn\"><b>В этих файлах размещены невидимые ссылки. Подозрение на ссылочный спам:</b><ul><li>";
+  $l_Result .= "<div class=\"warn\"><b>В этих файлах размещены невидимые ссылки. Подозрение на ссылочный спам:</b>";
   $l_Result .= printList($g_EmptyLink);
   $l_Result .= "</div>";
 
