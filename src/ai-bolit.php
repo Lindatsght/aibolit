@@ -14,18 +14,20 @@ $defaults = array(
 	'scan_all_files' => 0, // полное сканирование файлов (не только .js, .php, .html, .htaccess)
 	'scan_delay' => 1, // задержка в миллисекундах при сканировании файлов для снижения нагрузки на файловую систему
 	'max_size_to_scan' => '10M',
-	'site_url' => 'http://test1.ru/' // адрес вашего сайта. Если пусто - не проверяется стартовая страница
+	'site_url' => 'http://сайт/', // адрес вашего сайта
+	'no_rw_dir' => 0
 );
 
-
 // завернутые сигнатуры, чтобы не ругались антивирусы на PC и на хостинге
-$g_DBShe = unserialize(base64_decode("YTo5Mjp7aTowO3M6OTQ6IiRpbmZvIC49ICgoJHBlcm1zICYgMHgwMDQwKSA/KCgkcGVybXMgJiAweDA4MDApID8gJ3MnIDogJ3gnICkgOigoJHBlcm1zICYgMHgwODAwKSA/ICdTJyA6ICctJykiO2k6MTtzOjg0OiI8dGV4dGFyZWEgbmFtZT1cInBocGV2XCIgcm93cz1cIjVcIiBjb2xzPVwiMTUwXCI+Ii5AJF9QT1NUWydwaHBldiddLiI8L3RleHRhcmVhPjxicj4iO2k6MjtzOjEwMToiN1RNR0FIWTVLYU05bzM3Vy9HUS9mckZKZXRmcWxSR082RlNSVE1tN0lMU20zNW81ejQrdjBtY2Y0S2FIZ0tTNVkxN2VxcXZEMm1tTjhOenRleXBsTmQ2V093clFWSzQ0NUoveTAiO2k6MztzOjE2OiJjOTlmdHBicnV0ZWNoZWNrIjtpOjQ7czo4OiJjOTlzaGVsbCI7aTo1O3M6ODoicjU3c2hlbGwiO2k6NjtzOjE0OiJ0ZW1wX3I1N190YWJsZSI7aTo3O3M6NzY6IlIwbEdPRGxoSmdBV0FJQUFBQUFBQVAvLy95SDVCQVVVQUFFQUxBQUFBQUFtQUJZQUFBSXZqSStweSswUEY0aTBnVnZ6dVZ4WERub1EiO2k6ODtzOjc6ImNhc3VzMTUiO2k6OTtzOjEzOiJXU0NSSVBULlNIRUxMIjtpOjEwO3M6NDc6IkV4ZWN1dGVkIGNvbW1hbmQ6IDxiPjxmb250IGNvbG9yPSNkY2RjZGM+WyRjbWRdIjtpOjExO3M6MTE6ImN0c2hlbGwucGhwIjtpOjEyO3M6MTExOiJCREFRa0pDUXdMREJnTkRSZ3lJUndoTWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qTC93QUFSQ0FBUUFCQURBU0lBQWhFQkEiO2k6MTM7czozMDoiW0F2NGJmQ1lDUyx4S1drJCtUa1VTLHhuR2RBeFtPIjtpOjE0O3M6MTU6IkRYX0hlYWRlcl9kcmF3biI7aToxNTtzOjEwNjoiOXRaU0IwYnlCeU5UY2djMmhsYkd3Z0ppWWdMMkpwYmk5aVlYTm9JQzFwSWlrN0RRb2dJQ0JsYkhObERRb2dJQ0JtY0hKcGJuUm1LSE4wWkdWeWNpd2lVMjl5Y25raUtUc05DaUFnSUdOcyI7aToxNjtzOjg2OiJjcmxmLid1bmxpbmsoJG5hbWUpOycuJGNybGYuJ3JlbmFtZSgifiIuJG5hbWUsICRuYW1lKTsnLiRjcmxmLid1bmxpbmsoImdycF9yZXBhaXIucGhwIiI7aToxNztzOjEwNToiLzB0VlNHL1N1djBVci9oYVVZQWRuM2pNUXdiYm9jR2ZmQWVDMjlCTjl0bUJpSmRWMWxrK2pZRFU5MkM5NGpkdERpZit4T1lqRzZDTGh4MzFVbzl4OS9lQVdnc0JLNjBrSzJtTHdxenFkIjtpOjE4O3M6MTE1OiJtcHR5KCRfUE9TVFsndXInXSkpICRtb2RlIHw9IDA0MDA7IGlmICghZW1wdHkoJF9QT1NUWyd1dyddKSkgJG1vZGUgfD0gMDIwMDsgaWYgKCFlbXB0eSgkX1BPU1RbJ3V4J10pKSAkbW9kZSB8PSAwMTAwIjtpOjE5O3M6NDQ6IldUK1B7fkVXMEVyUE90blVAI0AmXmxec1AxbGRueUAjQCZuc2srcjAsR1QrIjtpOjIwO3M6Mzc6ImtsYXN2YXl2LmFzcD95ZW5pZG9zeWE9PCU9YWt0aWZrbGFzJT4iO2k6MjE7czoxMjI6Im50KShkaXNrX3RvdGFsX3NwYWNlKGdldGN3ZCgpKS8oMTAyNCoxMDI0KSkgLiAiTWIgIiAuICJGcmVlIHNwYWNlICIgLiAoaW50KShkaXNrX2ZyZWVfc3BhY2UoZ2V0Y3dkKCkpLygxMDI0KjEwMjQpKSAuICJNYiA8IjtpOjIyO3M6MzE6InMoKS5nKCkucygpLnMoKS5nKCkucygpLnMoKS5nKCkiO2k6MjM7czo4ODoiQ1Jic2tFSVMreWJLQXdjNi9PQjFqVThZMFlJTVZVaHhoYU9Jc0hBQ0J5RDB3TUFOT0hxWTVZNDhndWlCbkNoa3dQWU5Ua3hkQlJWUlpMSEZrb2pZOTZJSSI7aToyNDtzOjczOiIkcG9ydF9iaW5kX2JkX3BsPSJJeUV2ZFhOeUwySnBiaTl3WlhKc0RRb2tVMGhGVEV3OUlpOWlhVzR2WW1GemFDQXRhU0k3RFFwIjtpOjI1O3M6MTI3OiJDQjJhVFpwSURFd01qUXREUW9qTFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFEwS0kzSmxjWFZwIjtpOjI2O3M6NzoiTlREYWRkeSI7aToyNztzOjc2OiJhIGhyZWY9Ijw/ZWNobyAiJGZpc3Rpay5waHA/ZGl6aW49JGRpemluLy4uLyI/PiIgc3R5bGU9InRleHQtZGVjb3JhdGlvbjogbm9uIjtpOjI4O3M6MTE1OiJUUlVGRVJGSXNNU2s3RFFwaWFXNWtLRk1zYzI5amEyRmtaSEpmYVc0b0pFeEpVMVJGVGw5UVQxSlVMRWxPUVVSRVVsOUJUbGtwS1NCOGZDQmthV1VnSWtOaGJuUWdiM0JsYmlCd2IzSjBYRzRpT3cwS2JHIjtpOjI5O3M6Mzg6IlJvb3RTaGVsbCEnKTtzZWxmLmxvY2F0aW9uLmhyZWY9J2h0dHA6IjtpOjMwO3M6MTEzOiJtOTFkQ3dnSkdWdmRYUXBPdzBLYzJWc1pXTjBLQ1J5YjNWMElEMGdKSEpwYml3Z2RXNWtaV1lzSUNSbGIzVjBJRDBnSkhKcGJpd2dNVEl3S1RzTkNtbG1JQ2doSkhKdmRYUWdJQ1ltSUNBaEpHVnZkWCI7aTozMTtzOjkwOiI8JT1SZXF1ZXN0LlNlcnZlclZhcmlhYmxlcygic2NyaXB0X25hbWUiKSU+P0ZvbGRlclBhdGg9PCU9U2VydmVyLlVSTFBhdGhFbmNvZGUoRm9sZGVyLkRyaXYiO2k6MzI7czo3MzoiUjBsR09EbGhGQUFVQUtJQUFBQUFBUC8vLzkzZDNjREF3SWFHaGdRRUJQLy8vd0FBQUNINUJBRUFBQVlBTEFBQUFBQVVBQlFBQSI7aTozMztzOjE2MDoicHJpbnQoKGlzX3JlYWRhYmxlKCRmKSAmJiBpc193cml0ZWFibGUoJGYpKT8iPHRyPjx0ZD4iLncoMSkuYigiUiIudygxKS5mb250KCdyZWQnLCdSVycsMykpLncoMSk6KCgoaXNfcmVhZGFibGUoJGYpKT8iPHRyPjx0ZD4iLncoMSkuYigiUiIpLncoNCk6IiIpLigoaXNfd3JpdGFibCI7aTozNDtzOjE2MToiKCciJywnJnF1b3Q7JywkZm4pKS4nIjtkb2N1bWVudC5saXN0LnN1Ym1pdCgpO1wnPicuaHRtbHNwZWNpYWxjaGFycyhzdHJsZW4oJGZuKT5mb3JtYXQ/c3Vic3RyKCRmbiwwLGZvcm1hdC0zKS4nLi4uJzokZm4pLic8L2E+Jy5zdHJfcmVwZWF0KCcgJyxmb3JtYXQtc3RybGVuKCRmbikiO2k6MzU7czoxMToiemVoaXJoYWNrZXIiO2k6MzY7czo1OiJzeXBleCI7aTozNztzOjM5OiJKQCFWckAqJlJIUnd+Skx3Lkd8eGxobkxKfj8xLmJ3T2J4YlB8IVYiO2k6Mzg7czo4OiJjaWhzaGVsbCI7aTozOTtzOjEyNjoiWDFORlUxTkpUMDViSjNSNGRHRjFkR2hwYmlkZElEMGdkSEoxWlRzTkNpQWdJQ0JwWmlBb0pGOVFUMU5VV3lkeWJTZGRLU0I3RFFvZ0lDQWdJQ0J6WlhSamIyOXJhV1VvSjNSNGRHRjFkR2hmSnk0a2NtMW5jbTkxY0N3Z2JXIjtpOjQwO3M6NjE6IkpIWnBjMmwwWTI5MWJuUWdQU0FrU0ZSVVVGOURUMDlMU1VWZlZrRlNVMXNpZG1semFYUnpJbDA3SUdsbUsiO2k6NDE7czo3OiJGeGM5OXNoIjtpOjQyO3M6Mzk6IldTT3NldGNvb2tpZShtZDUoJF9TRVJWRVJbJ0hUVFBfSE9TVCddKSI7aTo0MztzOjEwNzoiQ1Fib0dsN2YreGNBeVV5c3hiNW1LUzZrQVdzblJMZFMrc0tnR29aV2Rzd0xGSlpWOHRWelhzcSttZVNQSE14VEkzblNVQjRmSjJ2UjNyM09udlh0TkFxTjZ3bi9EdFRUaStDdTFVT0p3TkwiO2k6NDQ7czoxNDE6IjwvdGQ+PHRkIGlkPWZhPlsgPGEgdGl0bGU9XCJIb21lOiAnIi5odG1sc3BlY2lhbGNoYXJzKHN0cl9yZXBsYWNlKCJcIiwgJHNlcCwgZ2V0Y3dkKCkpKS4iJy5cIiBpZD1mYSBocmVmPVwiamF2YXNjcmlwdDpWaWV3RGlyKCciLnJhd3VybGVuY29kZSI7aTo0NTtzOjE2OiJDb250ZW50LVR5cGU6ICRfIjtpOjQ2O3M6ODY6Ijxub2JyPjxiPiRjZGlyJGNmaWxlPC9iPiAoIi4kZmlsZVsic2l6ZV9zdHIiXS4iKTwvbm9icj48L3RkPjwvdHI+PGZvcm0gbmFtZT1jdXJyX2ZpbGU+IjtpOjQ3O3M6NDg6Indzb0V4KCd0YXIgY2Z6diAnIC4gZXNjYXBlc2hlbGxhcmcoJF9QT1NUWydwMiddKSI7aTo0ODtzOjIxOiJldmFsKGJhc2U2NF9kZWNvZGUoJF8iO2k6NDk7czoxNDI6IjVqYjIwaUtXOXlJSE4wY21semRISW9KSEpsWm1WeVpYSXNJbUZ3YjNKMElpa2diM0lnYzNSeWFYTjBjaWdrY21WbVpYSmxjaXdpYm1sbmJXRWlLU0J2Y2lCemRISnBjM1J5S0NSeVpXWmxjbVZ5TENKM1pXSmhiSFJoSWlrZ2IzSWdjM1J5YVhOMGNpZ2siO2k6NTA7czo3NjoiTFMwZ1JIVnRjRE5rSUdKNUlGQnBjblZzYVc0dVVFaFFJRmRsWW5Ob00yeHNJSFl4TGpBZ1l6QmtaV1FnWW5rZ2NqQmtjakVnT2t3PSI7aTo1MTtzOjY1OiJpZiAoZXJlZygnXltbOmJsYW5rOl1dKmNkW1s6Ymxhbms6XV0rKFteO10rKSQnLCAkY29tbWFuZCwgJHJlZ3MpKSI7aTo1MjtzOjExMDoidnp2NmQraU92dGtkMzhUbEh1OG1RYXZYZG5KQ2JwUWNwWGhOYmJMbVpPcU1vcERaZU5hbGIrVktsZWRoQ2pwVkFNUVNRbnhWSUVDUUFmTHU1S2dMbXdCNmVoUVFHTlNCWWpwZzlnNUdkQmloWG8iO2k6NTM7czo0Njoicm91bmQoMCs5ODMwLjQrOTgzMC40Kzk4MzAuNCs5ODMwLjQrOTgzMC40KSk9PSI7aTo1NDtzOjEyOiJQSFBTSEVMTC5QSFAiO2k6NTU7czoxMjc6InFoRFRaSXBNY0IxeEJvazMzMkJqY2NmUFhxMFFzWlUvZzRlYXBCeFQ1Z2l0MXJHZEt0d2YxcnQ5T09pY2MvaFRscGVGbUVqUlJrV0dXVEpUa0NvbDBYNEF1d0pTZkZodGZQNWRPZ241NjFpbCt3a3prcUNHOWRmVDl6cWMyNzQiO2k6NTY7czoxMjA6IlRzTkNpQWdJQ0J6YVc0dWMybHVYMlpoYldsc2VTQTlJRUZHWDBsT1JWUTdEUW9nSUNBZ2MybHVMbk5wYmw5d2IzSjBJRDBnYUhSdmJuTW9ZWFJ2YVNoaGNtZDJXekpkS1NrN0RRb2dJQ0FnYzJsdUxuTnBibDloWiI7aTo1NztzOjUyOiJhSFIwY0Rvdkwyb3RaR1YyTG5KMUwybHVaR1Y0TG5Cb2NEOWpjRzQ5Wm5KaGJXVnpaV3hzIjtpOjU4O3M6ODc6IldUSlRrQ29sMFg0QXV3SlNmRmh0ZlA1ZE9nbjU2MWlsK3dremtxQ0c5ZGZUOXpxYzI3NHZlSWVTZDQxQ3hVSXZIRm4rdFc3N29FM29ocVN2MDFCWHpUMCI7aTo1OTtzOjcxOiJIQnliM1J2S1NCOGZDQmthV1VvSWtWeWNtOXlPaUFrSVZ4dUlpazdEUXBqYjI1dVpXTjBLRk5QUTB0RlZDd2dKSEJoWkdSeSI7aTo2MDtzOjE3OiJXZWIgU2hlbGwgYnkgYm9mZiI7aTo2MTtzOjE2OiJXZWIgU2hlbGwgYnkgb1JiIjtpOjYyO3M6MTE6ImRldmlselNoZWxsIjtpOjYzO3M6MjA6IlNoZWxsIGJ5IE1hd2FyX0hpdGFtIjtpOjY0O3M6ODoiTjN0c2hlbGwiO2k6NjU7czoxMToiU3Rvcm03U2hlbGwiO2k6NjY7czoxMToiTG9jdXM3U2hlbGwiO2k6Njc7czoyMjoicHJpdmF0ZSBTaGVsbCBieSBtNHJjbyI7aTo2ODtzOjEzOiJ3NGNrMW5nIHNoZWxsIjtpOjY5O3M6MjE6IkZhVGFMaXNUaUN6X0Z4IEZ4MjlTaCI7aTo3MDtzOjEyOiJyNTdzaGVsbC5waHAiO2k6NzE7czoyNzoiZGVmYXVsdF9hY3Rpb24gPSAnRmlsZXNNYW4nIjtpOjcyO3M6NDI6Ildvcmtlcl9HZXRSZXBseUNvZGUoJG9wRGF0YVsncmVjdkJ1ZmZlciddKSI7aTo3MztzOjQwOiIkZmlsZXBhdGg9QHJlYWxwYXRoKCRfUE9TVFsnZmlsZXBhdGgnXSk7IjtpOjc0O3M6OToiYW50aXNoZWxsIjtpOjc1O3M6OToicm9vdHNoZWxsIjtpOjc2O3M6MTE6Im15c2hlbGxleGVjIjtpOjc3O3M6ODg6IiRyZWRpcmVjdFVSTD0naHR0cDovLycuJHJTaXRlLiRfU0VSVkVSWydSRVFVRVNUX1VSSSddO2lmKGlzc2V0KCRfU0VSVkVSWydIVFRQX1JFRkVSRVInXSkiO2k6Nzg7czoxMzU6IjQwVWVDS2RCOEVPcW1YQ0tlRzNxVTBZaUJqc0dXclVIbXdMR1Fnck5vdXlYRUo5TjR0alZ2clNRQUZEcURuVkhHOXZEWnlCRnZ3NGNUR0pvcS9QRkNVc3pJU3RDVFl6MlpiTGtUS3d2ZU1Wc05PQWZLTEkybkFva3prOUkzWmpsN3BBZUJqbiI7aTo3OTtzOjg4OiJJV2x1SGpLcHg3L1hHcUtjSDFHSEUyMDlMeHlpTkt6NVRLQ296SlhpcXVOdE9BeDNEeDRHS3pOVm5mVVNSL3NIOENUQWw1cTd3b2Rhb2pPM3YrdkNEZUdFIjtpOjgwO3M6MTAzOiJkSFV1MGRKV1ZzZ0RlMnJmZTRnV0J0aUxWYzVqa3BvMUxUOExxbWVYZVd6U1hWOUY0SUJVOGkzQmNvZUFyUG9QbW5nUi9DWWI3NTJmY1M5cEdBampGRkgwamRJS3ZqNGhNWk5ueVZVIjtpOjgxO3M6MTc6InJlbmFtZSgid3NvLnBocCIsIjtpOjgyO3M6NTQ6IiRNZXNzYWdlU3ViamVjdCA9IGJhc2U2NF9kZWNvZGUoJF9QT1NUWyJtc2dzdWJqZWN0Il0pOyI7aTo4MztzOjg2OiIwaVpHbHpjR3hoZVRwdWIyNWxJajQ4WVNCb2NtVm1QU0pvZEhSd09pOHZkM2QzTG1wdmIyMXNZWGgwWXk1amIyMGlQa3B2YjIxc1lWaFVReUJPWlhkeiI7aTo4NDtzOjQ5OiJqVk50VDl0QURQNCthZjhoUXhOdEJXMGhnUVFFYkt0S1lQc3lvUTcycFltcWEyS2FvIjtpOjg1O3M6NDU6IkBjb3B5KCRfRklMRVNbeF1bdG1wX25hbWVdLCRfRklMRVNbeF1bbmFtZV0pKSI7aTo4NjtzOjg6IlNoZWxsIE9rIjtpOjg3O3M6OTM6IklpazdEUXBqYjI1dVpXTjBLRk5QUTB0RlZDd2dKSEJoWkdSeUtTQjhmQ0JrYVdVb0lrVnljbTl5T2lBa0lWeHVJaWs3RFFwdmNHVnVLRk5VUkVsT0xDQWlQaVpUVCI7aTo4ODtzOjU4OiJTRUxFQ1QgMSBGUk9NIG15c3FsLnVzZXIgV0hFUkUgY29uY2F0KGB1c2VyYCwgJ0AnLCBgaG9zdGApIjtpOjg5O3M6MjE6IiFAJF9DT09LSUVbJHNlc3NkdF9rXSI7aTo5MDtzOjc5OiI0WVRaaU56TXlNMlV3TWpBMVpHUXhOVGMwWkdGa01XWmlaVDBpWEhnMlppSTdKRzA1TnprMFlUWTBPV0V6WVdRelpEZzVPVEJsT1dKaVlqIjtpOjkxO3M6NDg6IiRhPShzdWJzdHIodXJsZW5jb2RlKHByaW50X3IoYXJyYXkoKSwxKSksNSwxKS5jKSI7fQ=="));
-$g_SusDB = unserialize(base64_decode("YToxNTp7aTowO3M6MjA6ImluaV9nZXQoJ3NhZmVfbW9kZScpIjtpOjE7czoyMDoiaW5pX2dldCgic2FmZV9tb2RlIikiO2k6MjtzOjI4OiJldmFsKGd6aW5mbGF0ZShiYXNlNjRfZGVjb2RlIjtpOjM7czoxOToiZXZhbChiYXNlNjRfZGVjb2RlKCI7aTo0O3M6MjA6InNycGF0aDovLy4uLy4uLy4uLy4uIjtpOjU7czo3OiI8aWZyYW1lIjtpOjY7czo5OiJwaHBpbmZvKCkiO2k6NztzOjMxOiJldmFsKGd6dW5jb21wcmVzcyhiYXNlNjRfZGVjb2RlIjtpOjg7czoxODoiZXZhbChiYXNlNjRfZGVjb2RlIjtpOjk7czoxNDoiU0hPVyBEQVRBQkFTRVMiO2k6MTA7czoxNDoicG9zaXhfZ2V0cHd1aWQiO2k6MTE7czoxNzoiJGRlZmF1bHRfdXNlX2FqYXgiO2k6MTI7czoxMzoiZXZhbCh1bmVzY2FwZSI7aToxMztzOjIzOiJkb2N1bWVudC53cml0ZSh1bmVzY2FwZSI7aToxNDtzOjY6IkBjb3B5KCI7fQ=="));
+$g_DBShe = unserialize(base64_decode("YToxMDE6e2k6MDtzOjk0OiIkaW5mbyAuPSAoKCRwZXJtcyAmIDB4MDA0MCkgPygoJHBlcm1zICYgMHgwODAwKSA/ICdzJyA6ICd4JyApIDooKCRwZXJtcyAmIDB4MDgwMCkgPyAnUycgOiAnLScpIjtpOjE7czo4NDoiPHRleHRhcmVhIG5hbWU9XCJwaHBldlwiIHJvd3M9XCI1XCIgY29scz1cIjE1MFwiPiIuQCRfUE9TVFsncGhwZXYnXS4iPC90ZXh0YXJlYT48YnI+IjtpOjI7czoxMDE6IjdUTUdBSFk1S2FNOW8zN1cvR1EvZnJGSmV0ZnFsUkdPNkZTUlRNbTdJTFNtMzVvNXo0K3YwbWNmNEthSGdLUzVZMTdlcXF2RDJtbU44Tnp0ZXlwbE5kNldPd3JRVks0NDVKL3kwIjtpOjM7czoxNjoiYzk5ZnRwYnJ1dGVjaGVjayI7aTo0O3M6ODoiYzk5c2hlbGwiO2k6NTtzOjg6InI1N3NoZWxsIjtpOjY7czoxNDoidGVtcF9yNTdfdGFibGUiO2k6NztzOjc2OiJSMGxHT0RsaEpnQVdBSUFBQUFBQUFQLy8veUg1QkFVVUFBRUFMQUFBQUFBbUFCWUFBQUl2akkrcHkrMFBGNGkwZ1Z2enVWeFhEbm9RIjtpOjg7czo3OiJjYXN1czE1IjtpOjk7czoxMzoiV1NDUklQVC5TSEVMTCI7aToxMDtzOjQ3OiJFeGVjdXRlZCBjb21tYW5kOiA8Yj48Zm9udCBjb2xvcj0jZGNkY2RjPlskY21kXSI7aToxMTtzOjExOiJjdHNoZWxsLnBocCI7aToxMjtzOjExMToiQkRBUWtKQ1F3TERCZ05EUmd5SVJ3aE1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakwvd0FBUkNBQVFBQkFEQVNJQUFoRUJBIjtpOjEzO3M6MzA6IltBdjRiZkNZQ1MseEtXayQrVGtVUyx4bkdkQXhbTyI7aToxNDtzOjE1OiJEWF9IZWFkZXJfZHJhd24iO2k6MTU7czoxMDY6Ijl0WlNCMGJ5QnlOVGNnYzJobGJHd2dKaVlnTDJKcGJpOWlZWE5vSUMxcElpazdEUW9nSUNCbGJITmxEUW9nSUNCbWNISnBiblJtS0hOMFpHVnljaXdpVTI5eWNua2lLVHNOQ2lBZ0lHTnMiO2k6MTY7czo4NjoiY3JsZi4ndW5saW5rKCRuYW1lKTsnLiRjcmxmLidyZW5hbWUoIn4iLiRuYW1lLCAkbmFtZSk7Jy4kY3JsZi4ndW5saW5rKCJncnBfcmVwYWlyLnBocCIiO2k6MTc7czoxMDU6Ii8wdFZTRy9TdXYwVXIvaGFVWUFkbjNqTVF3YmJvY0dmZkFlQzI5Qk45dG1CaUpkVjFsaytqWURVOTJDOTRqZHREaWYreE9Zakc2Q0xoeDMxVW85eDkvZUFXZ3NCSzYwa0sybUx3cXpxZCI7aToxODtzOjExNToibXB0eSgkX1BPU1RbJ3VyJ10pKSAkbW9kZSB8PSAwNDAwOyBpZiAoIWVtcHR5KCRfUE9TVFsndXcnXSkpICRtb2RlIHw9IDAyMDA7IGlmICghZW1wdHkoJF9QT1NUWyd1eCddKSkgJG1vZGUgfD0gMDEwMCI7aToxOTtzOjQ0OiJXVCtQe35FVzBFclBPdG5VQCNAJl5sXnNQMWxkbnlAI0AmbnNrK3IwLEdUKyI7aToyMDtzOjM3OiJrbGFzdmF5di5hc3A/eWVuaWRvc3lhPTwlPWFrdGlma2xhcyU+IjtpOjIxO3M6MTIyOiJudCkoZGlza190b3RhbF9zcGFjZShnZXRjd2QoKSkvKDEwMjQqMTAyNCkpIC4gIk1iICIgLiAiRnJlZSBzcGFjZSAiIC4gKGludCkoZGlza19mcmVlX3NwYWNlKGdldGN3ZCgpKS8oMTAyNCoxMDI0KSkgLiAiTWIgPCI7aToyMjtzOjMxOiJzKCkuZygpLnMoKS5zKCkuZygpLnMoKS5zKCkuZygpIjtpOjIzO3M6ODg6IkNSYnNrRUlTK3liS0F3YzYvT0IxalU4WTBZSU1WVWh4aGFPSXNIQUNCeUQwd01BTk9IcVk1WTQ4Z3VpQm5DaGt3UFlOVGt4ZEJSVlJaTEhGa29qWTk2SUkiO2k6MjQ7czo3MzoiJHBvcnRfYmluZF9iZF9wbD0iSXlFdmRYTnlMMkpwYmk5d1pYSnNEUW9rVTBoRlRFdzlJaTlpYVc0dlltRnphQ0F0YVNJN0RRcCI7aToyNTtzOjEyNzoiQ0IyYVRacElERXdNalF0RFFvakxTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExTMHRMUzB0TFMwdExRMEtJM0psY1hWcCI7aToyNjtzOjc6Ik5URGFkZHkiO2k6Mjc7czo3NjoiYSBocmVmPSI8P2VjaG8gIiRmaXN0aWsucGhwP2RpemluPSRkaXppbi8uLi8iPz4iIHN0eWxlPSJ0ZXh0LWRlY29yYXRpb246IG5vbiI7aToyODtzOjExNToiVFJVRkVSRklzTVNrN0RRcGlhVzVrS0ZNc2MyOWphMkZrWkhKZmFXNG9KRXhKVTFSRlRsOVFUMUpVTEVsT1FVUkVVbDlCVGxrcEtTQjhmQ0JrYVdVZ0lrTmhiblFnYjNCbGJpQndiM0owWEc0aU93MEtiRyI7aToyOTtzOjM4OiJSb290U2hlbGwhJyk7c2VsZi5sb2NhdGlvbi5ocmVmPSdodHRwOiI7aTozMDtzOjExMzoibTkxZEN3Z0pHVnZkWFFwT3cwS2MyVnNaV04wS0NSeWIzVjBJRDBnSkhKcGJpd2dkVzVrWldZc0lDUmxiM1YwSUQwZ0pISnBiaXdnTVRJd0tUc05DbWxtSUNnaEpISnZkWFFnSUNZbUlDQWhKR1Z2ZFgiO2k6MzE7czo5MDoiPCU9UmVxdWVzdC5TZXJ2ZXJWYXJpYWJsZXMoInNjcmlwdF9uYW1lIiklPj9Gb2xkZXJQYXRoPTwlPVNlcnZlci5VUkxQYXRoRW5jb2RlKEZvbGRlci5Ecml2IjtpOjMyO3M6NzM6IlIwbEdPRGxoRkFBVUFLSUFBQUFBQVAvLy85M2QzY0RBd0lhR2hnUUVCUC8vL3dBQUFDSDVCQUVBQUFZQUxBQUFBQUFVQUJRQUEiO2k6MzM7czoxNjA6InByaW50KChpc19yZWFkYWJsZSgkZikgJiYgaXNfd3JpdGVhYmxlKCRmKSk/Ijx0cj48dGQ+Ii53KDEpLmIoIlIiLncoMSkuZm9udCgncmVkJywnUlcnLDMpKS53KDEpOigoKGlzX3JlYWRhYmxlKCRmKSk/Ijx0cj48dGQ+Ii53KDEpLmIoIlIiKS53KDQpOiIiKS4oKGlzX3dyaXRhYmwiO2k6MzQ7czoxNjE6IignIicsJyZxdW90OycsJGZuKSkuJyI7ZG9jdW1lbnQubGlzdC5zdWJtaXQoKTtcJz4nLmh0bWxzcGVjaWFsY2hhcnMoc3RybGVuKCRmbik+Zm9ybWF0P3N1YnN0cigkZm4sMCxmb3JtYXQtMykuJy4uLic6JGZuKS4nPC9hPicuc3RyX3JlcGVhdCgnICcsZm9ybWF0LXN0cmxlbigkZm4pIjtpOjM1O3M6MTE6InplaGlyaGFja2VyIjtpOjM2O3M6NToic3lwZXgiO2k6Mzc7czozOToiSkAhVnJAKiZSSFJ3fkpMdy5HfHhsaG5MSn4/MS5id09ieGJQfCFWIjtpOjM4O3M6ODoiY2loc2hlbGwiO2k6Mzk7czoxMjY6IlgxTkZVMU5KVDA1YkozUjRkR0YxZEdocGJpZGRJRDBnZEhKMVpUc05DaUFnSUNCcFppQW9KRjlRVDFOVVd5ZHliU2RkS1NCN0RRb2dJQ0FnSUNCelpYUmpiMjlyYVdVb0ozUjRkR0YxZEdoZkp5NGtjbTFuY205MWNDd2diVyI7aTo0MDtzOjYxOiJKSFpwYzJsMFkyOTFiblFnUFNBa1NGUlVVRjlEVDA5TFNVVmZWa0ZTVTFzaWRtbHphWFJ6SWwwN0lHbG1LIjtpOjQxO3M6NzoiRnhjOTlzaCI7aTo0MjtzOjM5OiJXU09zZXRjb29raWUobWQ1KCRfU0VSVkVSWydIVFRQX0hPU1QnXSkiO2k6NDM7czoxMDc6IkNRYm9HbDdmK3hjQXlVeXN4YjVtS1M2a0FXc25STGRTK3NLZ0dvWldkc3dMRkpaVjh0VnpYc3ErbWVTUEhNeFRJM25TVUI0ZkoydlIzcjNPbnZYdE5BcU42d24vRHRUVGkrQ3UxVU9Kd05MIjtpOjQ0O3M6MTQxOiI8L3RkPjx0ZCBpZD1mYT5bIDxhIHRpdGxlPVwiSG9tZTogJyIuaHRtbHNwZWNpYWxjaGFycyhzdHJfcmVwbGFjZSgiXCIsICRzZXAsIGdldGN3ZCgpKSkuIicuXCIgaWQ9ZmEgaHJlZj1cImphdmFzY3JpcHQ6Vmlld0RpcignIi5yYXd1cmxlbmNvZGUiO2k6NDU7czoxNjoiQ29udGVudC1UeXBlOiAkXyI7aTo0NjtzOjg2OiI8bm9icj48Yj4kY2RpciRjZmlsZTwvYj4gKCIuJGZpbGVbInNpemVfc3RyIl0uIik8L25vYnI+PC90ZD48L3RyPjxmb3JtIG5hbWU9Y3Vycl9maWxlPiI7aTo0NztzOjQ4OiJ3c29FeCgndGFyIGNmenYgJyAuIGVzY2FwZXNoZWxsYXJnKCRfUE9TVFsncDInXSkiO2k6NDg7czoyMToiZXZhbChiYXNlNjRfZGVjb2RlKCRfIjtpOjQ5O3M6MTQyOiI1amIyMGlLVzl5SUhOMGNtbHpkSElvSkhKbFptVnlaWElzSW1Gd2IzSjBJaWtnYjNJZ2MzUnlhWE4wY2lna2NtVm1aWEpsY2l3aWJtbG5iV0VpS1NCdmNpQnpkSEpwYzNSeUtDUnlaV1psY21WeUxDSjNaV0poYkhSaElpa2diM0lnYzNSeWFYTjBjaWdrIjtpOjUwO3M6NzY6IkxTMGdSSFZ0Y0ROa0lHSjVJRkJwY25Wc2FXNHVVRWhRSUZkbFluTm9NMnhzSUhZeExqQWdZekJrWldRZ1lua2djakJrY2pFZ09rdz0iO2k6NTE7czo2NToiaWYgKGVyZWcoJ15bWzpibGFuazpdXSpjZFtbOmJsYW5rOl1dKyhbXjtdKykkJywgJGNvbW1hbmQsICRyZWdzKSkiO2k6NTI7czoxMTA6InZ6djZkK2lPdnRrZDM4VGxIdThtUWF2WGRuSkNicFFjcFhoTmJiTG1aT3FNb3BEWmVOYWxiK1ZLbGVkaENqcFZBTVFTUW54VklFQ1FBZkx1NUtnTG13QjZlaFFRR05TQllqcGc5ZzVHZEJpaFhvIjtpOjUzO3M6NDY6InJvdW5kKDArOTgzMC40Kzk4MzAuNCs5ODMwLjQrOTgzMC40Kzk4MzAuNCkpPT0iO2k6NTQ7czoxMjoiUEhQU0hFTEwuUEhQIjtpOjU1O3M6MTI3OiJxaERUWklwTWNCMXhCb2szMzJCamNjZlBYcTBRc1pVL2c0ZWFwQnhUNWdpdDFyR2RLdHdmMXJ0OU9PaWNjL2hUbHBlRm1FalJSa1dHV1RKVGtDb2wwWDRBdXdKU2ZGaHRmUDVkT2duNTYxaWwrd2t6a3FDRzlkZlQ5enFjMjc0IjtpOjU2O3M6MTIwOiJUc05DaUFnSUNCemFXNHVjMmx1WDJaaGJXbHNlU0E5SUVGR1gwbE9SVlE3RFFvZ0lDQWdjMmx1TG5OcGJsOXdiM0owSUQwZ2FIUnZibk1vWVhSdmFTaGhjbWQyV3pKZEtTazdEUW9nSUNBZ2MybHVMbk5wYmw5aFoiO2k6NTc7czo1MjoiYUhSMGNEb3ZMMm90WkdWMkxuSjFMMmx1WkdWNExuQm9jRDlqY0c0OVpuSmhiV1Z6Wld4cyI7aTo1ODtzOjg3OiJXVEpUa0NvbDBYNEF1d0pTZkZodGZQNWRPZ241NjFpbCt3a3prcUNHOWRmVDl6cWMyNzR2ZUllU2Q0MUN4VUl2SEZuK3RXNzdvRTNvaHFTdjAxQlh6VDAiO2k6NTk7czo3MToiSEJ5YjNSdktTQjhmQ0JrYVdVb0lrVnljbTl5T2lBa0lWeHVJaWs3RFFwamIyNXVaV04wS0ZOUFEwdEZWQ3dnSkhCaFpHUnkiO2k6NjA7czoxNzoiV2ViIFNoZWxsIGJ5IGJvZmYiO2k6NjE7czoxNjoiV2ViIFNoZWxsIGJ5IG9SYiI7aTo2MjtzOjExOiJkZXZpbHpTaGVsbCI7aTo2MztzOjIwOiJTaGVsbCBieSBNYXdhcl9IaXRhbSI7aTo2NDtzOjg6Ik4zdHNoZWxsIjtpOjY1O3M6MTE6IlN0b3JtN1NoZWxsIjtpOjY2O3M6MTE6IkxvY3VzN1NoZWxsIjtpOjY3O3M6MjI6InByaXZhdGUgU2hlbGwgYnkgbTRyY28iO2k6Njg7czoxMzoidzRjazFuZyBzaGVsbCI7aTo2OTtzOjIxOiJGYVRhTGlzVGlDel9GeCBGeDI5U2giO2k6NzA7czoxMjoicjU3c2hlbGwucGhwIjtpOjcxO3M6Mjc6ImRlZmF1bHRfYWN0aW9uID0gJ0ZpbGVzTWFuJyI7aTo3MjtzOjQyOiJXb3JrZXJfR2V0UmVwbHlDb2RlKCRvcERhdGFbJ3JlY3ZCdWZmZXInXSkiO2k6NzM7czo0MDoiJGZpbGVwYXRoPUByZWFscGF0aCgkX1BPU1RbJ2ZpbGVwYXRoJ10pOyI7aTo3NDtzOjk6ImFudGlzaGVsbCI7aTo3NTtzOjk6InJvb3RzaGVsbCI7aTo3NjtzOjExOiJteXNoZWxsZXhlYyI7aTo3NztzOjg4OiIkcmVkaXJlY3RVUkw9J2h0dHA6Ly8nLiRyU2l0ZS4kX1NFUlZFUlsnUkVRVUVTVF9VUkknXTtpZihpc3NldCgkX1NFUlZFUlsnSFRUUF9SRUZFUkVSJ10pIjtpOjc4O3M6MTM1OiI0MFVlQ0tkQjhFT3FtWENLZUczcVUwWWlCanNHV3JVSG13TEdRZ3JOb3V5WEVKOU40dGpWdnJTUUFGRHFEblZIRzl2RFp5QkZ2dzRjVEdKb3EvUEZDVXN6SVN0Q1RZejJaYkxrVEt3dmVNVnNOT0FmS0xJMm5Bb2t6azlJM1pqbDdwQWVCam4iO2k6Nzk7czo4ODoiSVdsdUhqS3B4Ny9YR3FLY0gxR0hFMjA5THh5aU5LejVUS0NvekpYaXF1TnRPQXgzRHg0R0t6TlZuZlVTUi9zSDhDVEFsNXE3d29kYW9qTzN2K3ZDRGVHRSI7aTo4MDtzOjEwMzoiZEhVdTBkSldWc2dEZTJyZmU0Z1dCdGlMVmM1amtwbzFMVDhMcW1lWGVXelNYVjlGNElCVThpM0Jjb2VBclBvUG1uZ1IvQ1liNzUyZmNTOXBHQWpqRkZIMGpkSUt2ajRoTVpObnlWVSI7aTo4MTtzOjE3OiJyZW5hbWUoIndzby5waHAiLCI7aTo4MjtzOjU0OiIkTWVzc2FnZVN1YmplY3QgPSBiYXNlNjRfZGVjb2RlKCRfUE9TVFsibXNnc3ViamVjdCJdKTsiO2k6ODM7czo4NjoiMGlaR2x6Y0d4aGVUcHViMjVsSWo0OFlTQm9jbVZtUFNKb2RIUndPaTh2ZDNkM0xtcHZiMjFzWVhoMFl5NWpiMjBpUGtwdmIyMXNZVmhVUXlCT1pYZHoiO2k6ODQ7czo0OToialZOdFQ5dEFEUDQrYWY4aFF4TnRCVzBoZ1FRRWJLdEtZUHN5b1E3MnBZbXFhMkthbyI7aTo4NTtzOjQ1OiJAY29weSgkX0ZJTEVTW3hdW3RtcF9uYW1lXSwkX0ZJTEVTW3hdW25hbWVdKSkiO2k6ODY7czo4OiJTaGVsbCBPayI7aTo4NztzOjkzOiJJaWs3RFFwamIyNXVaV04wS0ZOUFEwdEZWQ3dnSkhCaFpHUnlLU0I4ZkNCa2FXVW9Ja1Z5Y205eU9pQWtJVnh1SWlrN0RRcHZjR1Z1S0ZOVVJFbE9MQ0FpUGlaVFQiO2k6ODg7czo1ODoiU0VMRUNUIDEgRlJPTSBteXNxbC51c2VyIFdIRVJFIGNvbmNhdChgdXNlcmAsICdAJywgYGhvc3RgKSI7aTo4OTtzOjIxOiIhQCRfQ09PS0lFWyRzZXNzZHRfa10iO2k6OTA7czo3OToiNFlUWmlOek15TTJVd01qQTFaR1F4TlRjMFpHRmtNV1ppWlQwaVhIZzJaaUk3SkcwNU56azBZVFkwT1dFellXUXpaRGc1T1RCbE9XSmlZaiI7aTo5MTtzOjQ4OiIkYT0oc3Vic3RyKHVybGVuY29kZShwcmludF9yKGFycmF5KCksMSkpLDUsMSkuYykiO2k6OTI7czo1NjoieGggLXMgIi91c3IvbG9jYWwvYXBhY2hlL3NiaW4vaHR0cGQgLURTU0wiIC4vaHR0cGQgLW0gJDEiO2k6OTM7czoxODoicHdkID4gR2VuZXJhc2kuZGlyIjtpOjk0O3M6MTI6IkJSVVRFRk9SQ0lORyI7aTo5NTtzOjMxOiJDYXV0YW0gZmlzaWVyZWxlIGRlIGNvbmZpZ3VyYXJlIjtpOjk2O3M6MjQ6ImV2YWwoZ3ppbmZsYXRlKHN0cl9yb3QxMyI7aTo5NztzOjQzOiJtdWlXcjRUbUxhUHdRb0pFU2dMb0FuUVN2OTNheHFoalJtT0FETW9GM1pMIjtpOjk4O3M6MzI6IiRrYT0nPD8vL0JSRSc7JGtha2E9JGthLidBQ0svLz8+IjtpOjk5O3M6ODU6IiRzdWJqPXVybGRlY29kZSgkX0dFVFsnc3UnXSk7JGJvZHk9dXJsZGVjb2RlKCRfR0VUWydibyddKTskc2RzPXVybGRlY29kZSgkX0dFVFsnc2QnXSkiO2k6MTAwO3M6Mzk6IiRfX19fPUBnemluZmxhdGUoJF9fX18pKXtpZihpc3NldCgkX1BPUyI7fQ=="));
+$g_SusDB = unserialize(base64_decode("YToyMDp7aTowO3M6MjA6ImluaV9nZXQoJ3NhZmVfbW9kZScpIjtpOjE7czoyMDoiaW5pX2dldCgic2FmZV9tb2RlIikiO2k6MjtzOjI4OiJldmFsKGd6aW5mbGF0ZShiYXNlNjRfZGVjb2RlIjtpOjM7czoxOToiZXZhbChiYXNlNjRfZGVjb2RlKCI7aTo0O3M6MjA6InNycGF0aDovLy4uLy4uLy4uLy4uIjtpOjU7czo3OiI8aWZyYW1lIjtpOjY7czoxMDoiQGd6aW5mbGF0ZSI7aTo3O3M6OToicGhwaW5mbygpIjtpOjg7czozMToiZXZhbChnenVuY29tcHJlc3MoYmFzZTY0X2RlY29kZSI7aTo5O3M6MTg6ImV2YWwoYmFzZTY0X2RlY29kZSI7aToxMDtzOjE0OiJTSE9XIERBVEFCQVNFUyI7aToxMTtzOjE0OiJwb3NpeF9nZXRwd3VpZCI7aToxMjtzOjE3OiIkZGVmYXVsdF91c2VfYWpheCI7aToxMztzOjEzOiJldmFsKHVuZXNjYXBlIjtpOjE0O3M6MjM6ImRvY3VtZW50LndyaXRlKHVuZXNjYXBlIjtpOjE1O3M6NjoiQGNvcHkoIjtpOjE2O3M6MTY6Ii4zMzMzMzMzMzMzMzMzMysiO2k6MTc7czoxMzoiLjY2NjY2NjY2NjY2NyI7aToxODtzOjg6InJvdW5kKDApIjtpOjE5O3M6ODM6Im1vdmVfdXBsb2FkZWRfZmlsZSgkX0ZJTEVTWyJmaWxlbmFtZSJdWyJ0bXBfbmFtZSJdLCAiIi4kX0ZJTEVTWyJmaWxlbmFtZSJdWyJuYW1lIl0pIjt9"));
 $g_AdwareSig = unserialize(base64_decode("YToxMTp7aTowO3M6MTk6Il9fbGlua2ZlZWRfcm9ib3RzX18iO2k6MTtzOjEzOiJMSU5LRkVFRF9VU0VSIjtpOjI7czoxODoiX19zYXBlX2RlbGltaXRlcl9fIjtpOjM7czoyNjoiZGlzcGVuc2VyLmFydGljbGVzLnNhcGUucnUiO2k6NDtzOjExOiJMRU5LX2NsaWVudCI7aTo1O3M6MTE6IlNBUEVfY2xpZW50IjtpOjY7czoxNToiZGIudHJ1c3RsaW5rLnJ1IjtpOjc7czoxNjoidGxfbGlua3NfZGJfZmlsZSI7aTo4O3M6MTU6IlRydXN0bGlua0NsaWVudCI7aTo5O3M6MTA6Ii0+U0xDbGllbnQiO2k6MTA7czo4MDoiaXNzZXQoJF9TRVJWRVJbJ0hUVFBfVVNFUl9BR0VOVCddKSAmJiAoJF9TRVJWRVJbJ0hUVFBfVVNFUl9BR0VOVCddID09ICdMTVBfUm9ib3QiO30="));
-$g_JSVirSig = unserialize(base64_decode("YToxMDp7aTowO3M6NDI6ImlmKDEpe2Y9J2YnKydyJysnbycrJ20nKydDaCcrJ2FyQycrJ29kZSc7fSI7aToxO3M6MTk6Ii5wcm90b3R5cGUuYX1jYXRjaCgiO2k6MjtzOjI4OiJpZihSZWYuaW5kZXhPZignLmdvb2dsZS4nKSE9IjtpOjM7czo3MzoiaW5kZXhPZnxpZnxyY3xsZW5ndGh8bXNufHlhaG9vfHJlZmVycmVyfGFsdGF2aXN0YXxvZ298Yml8aHB8dmFyfGFvbHxxdWVyeSI7aTo0O3M6NDY6IkFycmF5LnByb3RvdHlwZS5zbGljZS5jYWxsKGFyZ3VtZW50cykuam9pbigiIikiO2k6NTtzOjcxOiJxPWRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoImQiKyJpIisidiIpO3EuYXBwZW5kQ2hpbGQocSsiIik7fWNhdGNoKHF3KXtoPSI7aTo2O3M6Njg6Iit6ejtzcz1bXTtmPSdmcicrJ29tJysnQ2gnO2YrPSdhckMnO2YrPSdvZGUnO3c9dGhpcztlPXdbZlsic3Vic3RyIl0oIjtpOjc7czoxMDI6InM1KHE1KXtyZXR1cm4gKytxNTt9ZnVuY3Rpb24geWYoc2Ysd2Upe3JldHVybiBzZi5zdWJzdHIod2UsMSk7fWZ1bmN0aW9uIHkxKHdiKXtpZih3Yj09MTY4KXdiPTEwMjU7ZWxzZSI7aTo4O3M6NTY6ImlmKG5hdmlnYXRvci51c2VyQWdlbnQubWF0Y2goLyhhbmRyb2lkfG1pZHB8ajJtZXxzeW1iaWFuIjtpOjk7czoxMDA6ImRvY3VtZW50LndyaXRlKCc8c2NyaXB0IGxhbmd1YWdlPSJKYXZhU2NyaXB0IiB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiIHNyYz0iJytkb21haW4rJyI+PC9zY3InKydpcHQ+JykiO30="));
+$g_JSVirSig = unserialize(base64_decode("YToxMTp7aTowO3M6NDI6ImlmKDEpe2Y9J2YnKydyJysnbycrJ20nKydDaCcrJ2FyQycrJ29kZSc7fSI7aToxO3M6MTk6Ii5wcm90b3R5cGUuYX1jYXRjaCgiO2k6MjtzOjI4OiJpZihSZWYuaW5kZXhPZignLmdvb2dsZS4nKSE9IjtpOjM7czo3MzoiaW5kZXhPZnxpZnxyY3xsZW5ndGh8bXNufHlhaG9vfHJlZmVycmVyfGFsdGF2aXN0YXxvZ298Yml8aHB8dmFyfGFvbHxxdWVyeSI7aTo0O3M6NDY6IkFycmF5LnByb3RvdHlwZS5zbGljZS5jYWxsKGFyZ3VtZW50cykuam9pbigiIikiO2k6NTtzOjcxOiJxPWRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoImQiKyJpIisidiIpO3EuYXBwZW5kQ2hpbGQocSsiIik7fWNhdGNoKHF3KXtoPSI7aTo2O3M6Njg6Iit6ejtzcz1bXTtmPSdmcicrJ29tJysnQ2gnO2YrPSdhckMnO2YrPSdvZGUnO3c9dGhpcztlPXdbZlsic3Vic3RyIl0oIjtpOjc7czoxMDI6InM1KHE1KXtyZXR1cm4gKytxNTt9ZnVuY3Rpb24geWYoc2Ysd2Upe3JldHVybiBzZi5zdWJzdHIod2UsMSk7fWZ1bmN0aW9uIHkxKHdiKXtpZih3Yj09MTY4KXdiPTEwMjU7ZWxzZSI7aTo4O3M6NTY6ImlmKG5hdmlnYXRvci51c2VyQWdlbnQubWF0Y2goLyhhbmRyb2lkfG1pZHB8ajJtZXxzeW1iaWFuIjtpOjk7czoxMDA6ImRvY3VtZW50LndyaXRlKCc8c2NyaXB0IGxhbmd1YWdlPSJKYXZhU2NyaXB0IiB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiIHNyYz0iJytkb21haW4rJyI+PC9zY3InKydpcHQ+JykiO2k6MTA7czoyODoiaHR0cDovL3Boc3AucnUvXy9nby5waHA/c2lkPSI7fQ=="));
 
 ////////////////////////////////////////////////////////////////////////////
-define('AI_VERSION', '20120614');
+define('AI_VERSION', '20120622');
+
+define('INFO_M', base64_decode('PGZvbnQgY29sb3I9I0UwNjA2MD7QotC+0LvRjNC60L4g0LTQu9GPINC90LXQutC+0LzQvNC10YDRh9C10YHQutC+0LPQviDQuNGB0L/QvtC70YzQt9C+0LLQsNC90LjRjyE8L2ZvbnQ+PC9oNT4='));
 
 $l_Res = '';
 
@@ -43,7 +45,12 @@ $g_TotalFiles = 0;
 $g_FoundTotalDirs = 0;
 $g_FoundTotalFiles = 0;
 
-error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
+if (!isCli()) {
+   $defaults['site_url'] = 'http://' . $_SERVER['HOST'] . '/'; 
+}
+
+//error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
+
 set_time_limit(0);
 ini_set('max_execution_time', '600');
 ini_set('memory_limit','256M');
@@ -52,6 +59,22 @@ if (!function_exists('stripos')) {
 	function stripos($par_Str, $par_Entry) {
 		return strpos(strtolower($par_Str), strtolower($par_Entry));
 	}
+}
+
+/**
+ * Print file
+*/
+function printFile() {
+	$l_FileName = $_GET['fn'];
+	$l_CRC = isset($_GET['c']) ? (int)$_GET['c'] : 0;
+	$l_Content = implode('', file($l_FileName));
+	$l_FileCRC = crc32($l_Content);
+	if ($l_FileCRC != $l_CRC) {
+		print 'Доступ запрещен.';
+		exit;
+	}
+	
+	print '<pre>' . htmlspecialchars($l_Content) . '</pre>';
 }
 
 /**
@@ -260,11 +283,15 @@ define('ROOT_PATH', realpath($defaults['path']));
 
 if (!ROOT_PATH)
 {
-	die(stdOut("Directory '{$defaults['path']}' not found!"));
+        if (isCli())  {
+		die(stdOut("Directory '{$defaults['path']}' not found!"));
+	}
 }
 elseif(!is_readable(ROOT_PATH))
 {
-	die(stdOut("Cannot read directory '" . ROOT_PATH . "'!"));
+        if (isCli())  {
+		die(stdOut("Cannot read directory '" . ROOT_PATH . "'!"));
+	}
 }
 
 define('CURRENT_DIR', getcwd());
@@ -383,11 +410,15 @@ ob_start();
  }
 
  .offer {
+  -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+
    position: absolute;
    width: 350px;
    right: 100px;
    top: 100px;
-   background: #E08080;
+   background: #E06060;
    color: white;
    font-size: 11px;
    font-family: Arial;
@@ -453,6 +484,19 @@ ob_start();
  }
 
 </style>
+
+<script language="javascript">
+  function addToIgnore(par_Lnk, par_FN, par_CRC) {
+	var o = document.getElementById('igid');
+	var ta = document.forms.ignore.list;
+	
+	ta.value = ta.value + par_FN + "\t" + par_CRC + "\n";
+	
+	par_Lnk.innerHTML = 'Добавлено'; 
+	o.style.display = 'block';
+  }
+</script>
+
 </head>
 <body>
 
@@ -461,14 +505,12 @@ ob_start();
 ////////////////////////////////////////////////////////////////////////////
 $l_Result = '';
 
-$l_Result .= '<h3>AI-Болит v.' . AI_VERSION . ' &mdash; удаленькая искалка вредоносного ПО на хостинге.</h3><h5>Григорий Земсков, 2012, <a target=_blank href="http://revisium.com/ai/">Страница проекта на revisium.com.</a></h5>';
-
+$l_Result .= '<h3>AI-Болит v.' . AI_VERSION . ' &mdash; удаленькая искалка вредоносного ПО на хостинге.</h3><h5>Григорий Земсков, 2012, <a target=_blank href="http://revisium.com/ai/">Страница проекта на revisium.com.</a>  ' . INFO_M . '</h5>';
 
 $l_CreationTime = filemtime(__FILE__);
 if (time() - $l_CreationTime > 86400) {
   $l_Result .= '<div class="update">Проверьте обновление на сайте <a href="http://revisium.com/ai/">http://revisium.com/ai/</a>. Возможно, ваша версия скрипта уже устарела.</div>';
 }
-
 
 define('QCR_INDEX_FILENAME', 'fn');
 define('QCR_INDEX_TYPE', 'type');
@@ -547,9 +589,23 @@ function bytes2Human($bites)
 }
 
 ///////////////////////////////////////////////////////////////////////////
+function needIgnore($par_FN, $par_CRC) {
+  global $g_IgnoreList;
+  
+  for ($i = 0; $i < count($g_IgnoreList); $i++) {
+     if (strpos($par_FN, $g_IgnoreList[$i][0]) >= 0) {
+		if ($par_CRC == $g_IgnoreList[$i][1]) {
+			return true;
+		}
+	 }
+  }
+  
+  return false;
+}
+
 function printList($par_List, $par_Details = null) {
   global $g_Structure;
-
+  
   $l_Result = '';
   $l_Result .= "<div class=\"flist\"><table cellspacing=1 cellpadding=4 border=0>";
 
@@ -558,12 +614,19 @@ function printList($par_List, $par_Details = null) {
   $l_Result .= "<th>Дата создания</th>";
   $l_Result .= "<th>Дата модификации</th>";
   $l_Result .= "<th width=90>Размер</th>";
+  $l_Result .= "<th width=90>CRC32</th>";
+  
   $l_Result .= "</tr>";
 
   for ($i = 0; $i < count($par_List); $i++) {
-     $l_Creat = $g_Structure['c'][$par_List[$i]] > 0 ? date("d/m/Y H:i", $g_Structure['c'][$par_List[$i]]) : '-';
-     $l_Modif = $g_Structure['m'][$par_List[$i]] > 0 ? date("d/m/Y H:i", $g_Structure['m'][$par_List[$i]]) : '-';
-     $l_Size = $g_Structure['s'][$par_List[$i]] > 0 ? bytes2Human($g_Structure['s'][$par_List[$i]]) : '-';
+    $l_Pos = $par_List[$i];
+	if (needIgnore($g_Structure['n'][$par_List[$i]], $g_Structure['crc'][$l_Pos])) {
+		continue;
+	}
+  
+     $l_Creat = $g_Structure['c'][$l_Pos] > 0 ? date("d/m/Y H:i", $g_Structure['c'][$l_Pos]) : '-';
+     $l_Modif = $g_Structure['m'][$l_Pos] > 0 ? date("d/m/Y H:i", $g_Structure['m'][$l_Pos]) : '-';
+     $l_Size = $g_Structure['s'][$l_Pos] > 0 ? bytes2Human($g_Structure['s'][$l_Pos]) : '-';
 
      if ($par_Details != null) {
         $l_WithMarket = preg_replace('|@AI_MARKER@|smi', '<span class="marker">|</span>', $par_Details[$i]);
@@ -572,12 +635,20 @@ function printList($par_List, $par_Details = null) {
         $l_Body = '';
      }
 
-     $l_Result .= "<tr class=\"tbg" . ( $i % 2 ). "\">";
-     $l_Result .= "<td><div class=\"it\">" . $g_Structure['n'][$par_List[$i]] . "</div>" . $l_Body . "</td>";
-     $l_Result .= "<td><div class=\"ctd\">" . $l_Creat . "</div></td>";
-     $l_Result .= "<td><div class=\"ctd\">" . $l_Modif . "</div></td>";
-     $l_Result .= "<td><div class=\"ctd\">" . $l_Size . "</div></td>";
-     $l_Result .= "</tr>";
+     $l_Result .= '<tr class="tbg' . ( $i % 2 ). '">';
+	 
+	 if (is_file($g_Structure['n'][$l_Pos])) {
+		$l_Result .= '<td><div class="it"><a  class="it" target="_blank" href="'. $defaults['site_url'] . 'ai-bolit.php?fn=' .
+	              $g_Structure['n'][$l_Pos] . '&ph=' . crc32(PASS) . '&c=' . $g_Structure['crc'][$l_Pos] . '">' . $g_Structure['n'][$l_Pos] . '</a></div>' . $l_Body . '</td>';
+	 } else {
+		$l_Result .= '<td><div class="it">' . $g_Structure['n'][$par_List[$i]] . '</div></td>';
+	 }
+	 
+     $l_Result .= '<td><div class="ctd">' . $l_Creat . '</div></td>';
+     $l_Result .= '<td><div class="ctd">' . $l_Modif . '</div></td>';
+     $l_Result .= '<td><div class="ctd">' . $l_Size . '</div></td>';
+     $l_Result .= '<td><div class="ctd"><a href="#" onclick="addToIgnore(this, \'' . $g_Structure['n'][$l_Pos] . '\',\'' . $g_Structure['crc'][$l_Pos] . '\');return false;">' . $g_Structure['crc'][$l_Pos] . '</a></div></td>';
+     $l_Result .= '</tr>';
 
   }
 
@@ -594,7 +665,7 @@ function QCR_ScanDirectories($l_RootDir)
 	$l_DoorwayFilesCounter = 0;
 	$l_SourceDirIndex = $g_Counter - 1;
 
-	if ($l_DIRH = opendir($l_RootDir))
+	if ($l_DIRH = @opendir($l_RootDir))
 	{
 		while ($l_FileName = readdir($l_DIRH))
 		{
@@ -760,7 +831,8 @@ function QCR_GoScan($par_Offset)
 			else
 			{
 				$g_TotalFiles++;
-				$l_Content = implode('', file($l_Filename));
+				$l_Content = @implode('', file($l_Filename));
+				$g_Structure['crc'][$i] = crc32($l_Content);
 				
 				$l_Unwrapped = UnwrapObfu($l_Content);
 
@@ -872,6 +944,8 @@ function QCR_GoScan($par_Offset)
 						}
 					}
 
+					unset($l_HTAContent);
+					
 					$l_Pos = stripos($l_Content, 'auto_prepend_file');
 					if ($l_Pos !== false) {
 						$g_Redirect[] = $i;
@@ -883,11 +957,14 @@ function QCR_GoScan($par_Offset)
 						$g_RedirectPHPFragment[] = getFragment($l_Content, $l_Pos);
 					}
 
-					if (preg_match("|RewriteRule\s+\^\(\.\*\)\$\s+-\s+\[\s*F\s*,\s*L\s*\]|smi")) {
+					if (preg_match("|RewriteRule\s+\^\(\.\*\)\$\s+-\s+\[\s*F\s*,\s*L\s*\]|smi", $l_Content, $l_Found)) {
 						$g_Redirect[] = $i;
 					}
 				}
 			}
+			
+			unset($l_Unwrapped);
+			unset($l_Content);
 			
 			printProgress(++$_files_and_ignored);
 		} // end of if (file)
@@ -990,15 +1067,35 @@ if (!isCli()) {
    header('Content-type: text/html; charset=utf-8');
 }
 
+if (!isCli()) {
 
-if ($_GET['p'] != PASS && isset($_SERVER['HTTP_HOST'])) {
-  print "Запустите скрипт с паролем, который установлен в переменной PASS (в начале файла). <br/>Например, так http://ваш_сайт_и_путь_до_скрипта/ai-bolit.php?p=<b>qwe555</b>";
-  exit;
+  if (!($_GET['p'] == PASS || $_GET['ph'] == crc32(PASS))) {
+    print "Запустите скрипт с паролем, который установлен в переменной PASS (в начале файла). <br/>Например, так http://ваш_сайт_и_путь_до_скрипта/ai-bolit.php?p=<b>qwe555</b>";
+    exit;
+  }
+}
+
+if (isset($_GET['fn'])) {
+   printFile();
+   exit;
 }
 
 if (!is_readable(ROOT_PATH)) {
   print "Текущая директория не доступна для чтения скрипту. Пожалуйста, укажите права на доступ <b>rwxr-xr-x</b> или с помощью командной строки <b>chmod +r имя_директории</b>";
   exit;
+}
+
+$g_IgnoreList = array();
+
+$l_IgnoreFilename = '.aignore';
+
+if (file_exists($l_IgnoreFilename)) {
+    $l_IgnoreListRaw = file($l_IgnoreFilename);
+    for ($i = 0; $i < count($l_IgnoreListRaw); $i++) 
+    {
+    	$g_IgnoreList[] = explode("\t", trim($l_IgnoreListRaw[$i]));
+    }
+    unset($l_IgnoreListRaw);
 }
 
 stdOut("Start scanning '" . ROOT_PATH . "'.");
@@ -1144,22 +1241,24 @@ if (count($g_WarningPHP) > 0) {
 
 }
 
-if (count($g_WritableDirectories) > 0) {
+if (!$defaults['no_rw_dir']) {
+   if (count($g_WritableDirectories) > 0) {
 
-  $l_Result .= "<div class=\"warn2\"><b>Потенциально небезопасно! Директории, доступные скрипту на запись:</b>";
-  $l_Result .= printList($g_WritableDirectories);
-  $l_Result .= "</div>";
+     $l_Result .= "<div class=\"warn2\"><b>Потенциально небезопасно! Директории, доступные скрипту на запись:</b>";
+     $l_Result .= printList($g_WritableDirectories);
+     $l_Result .= "</div>";
 
-} else {
+   } else {
 
-  $l_Result .= '<div class="ok"><b>Не найдено директорий, доступных на запись скриптом</b></div>';
+     $l_Result .= '<div class="ok"><b>Не найдено директорий, доступных на запись скриптом</b></div>';
 
+   }
 }
 
 $max_size_to_scan = getBytes(MAX_SIZE_TO_SCAN);
 $max_size_to_scan = $max_size_to_scan > 0 ? $max_size_to_scan : getBytes('1m');
 
-if (count($$g_BigFiles) > 0) {
+if (count($g_BigFiles) > 0) {
 
   $l_Result .= "<div class=\"warn2\"><b>Большие файлы (больше чем " . bytes2Human($max_size_to_scan) . "! Пропущено:</b>";
   $l_Result .= printList($g_BigFiles);
@@ -1171,6 +1270,12 @@ if (count($$g_BigFiles) > 0) {
   }
 }
 
+$l_Result .= 'Использовано памяти при сканировании: ' . bytes2Human(memory_get_peak_usage()) . '<p>';
+
+$l_Result .= '<div id="igid" style="display: none;"><div class="sec">Добавить в список игнорируемых</div>';
+$l_Result .= '<form name="ignore"><textarea name="list" style="width: 600px; height: 400px;"></textarea></form>';
+$l_Result .= '<div class="details">Скопируйте этот список и вставьте его в файл .aignore, чтобы исключить эти файлы из отчета.</div></div>';
+
 if (!SCAN_ALL_FILES) {
   $l_Result .= '<div class="notice"><span class="vir">[!]</span> В скрипте отключено полное сканирование файлов, проверяются только .php, .html, .htaccess. Чтобы выполнить более тщательное сканирование, <br/>поменяйте значение настройки на <b>\'scan_all_files\' => 1</b> в самом верху скрипта. Скрипт в этом случае может работать очень долго. Рекомендуется отключить на хостинге лимит по времени выполнения, либо запускать скрипт из командной строки.</div>';
 }
@@ -1181,8 +1286,8 @@ $l_Result .= '</div>';
 
 if ($l_ShowOffer) {
   print '<div class="offer">' .
-        'Не уверены, как правильно <b>очистить сервер от вредоносного ПО</b>? Напишите мне через <a href="http://www.revisium.com/ru/contacts/">форму на сайте</a> или на email: <a href="mailto:audit@revisium.com">audit@revisium.com</a>. Помогу за небольшое денежное вознаграждение.<p>' .
-        'Если скрипт оказался вам полезен, <br><a href="http://revisium.com/ai/others.php"><b>поддержите проект материально</b></a>. Спасибо.' .
+        'Не уверены, как правильно <b>очистить сервер от вирусов и шеллов</b>? Напишите мне через <a href="http://www.revisium.com/ru/contacts/">форму на сайте</a> или на email: <a href="mailto:audit@revisium.com">audit@revisium.com</a>. Профессионально почищу сервер от вредоносных скриптов, проанализирую пути и причины появления вирусов, объясню как снизить вероятность повторного заражения. Услуга платная.<p>' .
+        'Если скрипт оказался вам полезен, <br>пожалуйста, <a href="http://revisium.com/ai/others.php"><b>поддержите проект материально</b></a>. Спасибо.' .
         '</div>';
 }
 
